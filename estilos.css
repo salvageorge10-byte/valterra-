@@ -236,6 +236,9 @@ p { margin: 0; text-wrap: pretty; }
 .ficha-precio { grid-row: 3; grid-column: 2; align-self: baseline; font-family: var(--serif); font-size: clamp(1.2rem, 1.6vw, 1.45rem); color: var(--azul); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .ficha-precio small { font-family: var(--sans); font-size: .78rem; color: var(--texto-2); }
 .ficha-datos { grid-row: 3; grid-column: 1; align-self: baseline; font-size: .95rem; color: var(--texto-2); }
+/* fichas angostas: el precio va debajo de los datos, no al costado */
+.prop-b .ficha, .prop-c .ficha { grid-template-columns: 1fr; }
+.prop-b .ficha-precio, .prop-c .ficha-precio { grid-row: auto; grid-column: 1; margin-top: .3rem; }
 .props-nota { max-width: var(--ancho); margin: var(--e7) auto 0; padding: 0 var(--margen); font-size: .9rem; color: var(--texto-2); }
 .props-nota a { color: var(--azul); font-weight: 600; text-underline-offset: 3px; }
 
@@ -428,8 +431,10 @@ p { margin: 0; text-wrap: pretty; }
   padding: .4rem 1.1rem .4rem .4rem; border-radius: 999px;
   background: var(--tinta); border: 1px solid rgba(247, 219, 134, .45); color: #fff;
   font: 600 .95rem/1 var(--sans); text-decoration: none;
-  transition: border-color .2s, transform .25s;
+  transition: border-color .2s, transform .25s, opacity .3s, visibility .3s;
 }
+/* sobre la portada ya está el WhatsApp del header: el flotante aparece después */
+.wa-flot.oculto { opacity: 0; visibility: hidden; transform: translateY(8px); }
 .wa-flot:hover { border-color: var(--oro-claro); transform: translateY(-2px); }
 .wa-flot-ico { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #25d366; color: #fff; }
 .wa-flot-ico svg { width: 22px; height: 22px; }
