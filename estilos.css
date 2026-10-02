@@ -100,6 +100,20 @@ p { margin: 0; text-wrap: pretty; }
 
 
 
+/* ── Servicios: registro ───────────────────────────── */
+.servicios { padding-bottom: var(--e7); }
+.registro { max-width: var(--ancho); margin: var(--e4) auto 0; padding: 0 var(--margen); }
+.fila {
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: var(--e4);
+  padding: var(--e3) 0; border-bottom: 1px solid var(--linea);
+  transition: background .2s;
+}
+.fila:first-child { border-top: 1px solid var(--linea); }
+.fila dt { font-family: var(--serif); font-size: clamp(1.4rem, 2.4vw, 2.05rem); line-height: 1.15; color: var(--azul); transition: color .2s, transform .25s; }
+.fila dd { margin: 0; color: var(--texto-2); max-width: 52ch; align-self: center; }
+.fila:hover dt { color: var(--oro-osc); transform: translateX(.35rem); }
+
+
 /* ── Zona + contacto (bloque oscuro de cierre) ────── */
 .zona { background: var(--noche); color: #fff; padding-top: var(--e6); }
 .zona-cuerpo {
@@ -175,6 +189,9 @@ p { margin: 0; text-wrap: pretty; }
   .folio { flex-direction: column; gap: 0; }
   .folio-nota { border-top: 0; padding-top: .2rem; }
 
+
+  .fila { grid-template-columns: 1fr; gap: .4rem; }
+  .servicios { padding-bottom: var(--e6); }
 
   .zona-cuerpo { display: block; padding-top: var(--e4); }
   .zona-foto-a { margin: var(--e5) 0 0 18%; }
@@ -430,131 +447,6 @@ p { margin: 0; text-wrap: pretty; }
   .portada-cta { font-size: .95rem; }
 }
 
-/* ══ QUÉ HACEMOS: cuatro operaciones colgadas de un filete ═══════ */
-.hacemos { padding: var(--e6) 0 var(--e7); }
-.hacemos-cab {
-  max-width: var(--ancho); margin: 0 auto; padding: var(--e5) var(--margen) 0;
-  display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: var(--e5); align-items: end;
-}
-.hacemos-tit { font-size: clamp(2.1rem, 4.2vw, 3.6rem); line-height: 1.06; color: var(--azul); max-width: 19ch; }
-.hacemos-intro { color: var(--texto-2); max-width: 38ch; }
-
-.operaciones {
-  list-style: none; margin: var(--e6) auto 0; padding: 0 var(--margen); max-width: var(--ancho);
-  display: grid; grid-template-columns: minmax(0, 1.25fr) repeat(3, minmax(0, 1fr));
-  position: relative;
-}
-.operaciones::before { content: ""; position: absolute; top: 0; left: var(--margen); right: var(--margen); height: 1px; background: var(--oro-osc); }
-.op {
-  position: relative; display: flex; flex-direction: column;
-  padding: var(--e5) var(--e4) var(--e4); border-left: 1px solid var(--linea);
-  transition: background .25s;
-}
-.op::before {
-  content: ""; position: absolute; top: -6px; left: var(--e4); width: 11px; height: 11px;
-  background: var(--marfil); border: 1px solid var(--oro-osc); transform: rotate(45deg);
-}
-.op:hover { background: var(--papel); }
-.op-quien { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 600; color: var(--oro-osc); }
-.op-verbo { font-size: clamp(2.2rem, 3.4vw, 3.1rem); line-height: 1; color: var(--azul); margin-top: var(--e2); transition: color .2s; }
-.op:hover .op-verbo { color: var(--oro-osc); }
-.op-txt { color: var(--texto-2); margin-top: var(--e3); max-width: 30ch; }
-.op-link {
-  padding-top: var(--e4); align-self: flex-start;
-  font-weight: 600; color: var(--azul); text-decoration: none;
-  background: linear-gradient(var(--oro-osc), var(--oro-osc)) 0 100% / 100% 1px no-repeat; padding-bottom: .3rem;
-}
-.op > .op-txt { flex: 1; }
-.op-link { margin-top: var(--e4); }
-
-/* vender es la operación principal: la columna se oscurece */
-.op-principal { background: var(--azul); border-left: 0; color: #fff; }
-.op-principal:hover { background: #062652; }
-.op-principal::before { background: var(--azul); border-color: var(--oro-claro); }
-.op-principal .op-quien { color: var(--oro); }
-.op-principal .op-verbo, .op-principal:hover .op-verbo { color: #fff; }
-.op-principal .op-txt { color: var(--claro-2); }
-.op-principal .op-link { color: var(--oro-claro); background-image: linear-gradient(var(--oro), var(--oro)); }
-
-/* ══ TASACIÓN: propietario frente a mercado ══════════════════════ */
-.tasacion { padding: 0 0 var(--e7); }
-.tasacion-cab { max-width: var(--ancho); margin: 0 auto; padding: var(--e5) var(--margen) 0; }
-.tasacion-tit { font-size: clamp(2.1rem, 4.4vw, 3.9rem); line-height: 1.06; color: var(--azul); max-width: 22ch; }
-
-.balanza {
-  max-width: var(--ancho); margin: var(--e6) auto 0; padding: 0 var(--margen);
-  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 15rem) minmax(0, 1fr); column-gap: var(--e5); align-items: center;
-}
-.balanza-et { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 600; color: var(--texto-2); padding-bottom: var(--e2); }
-.balanza-lado ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--linea); }
-.balanza-lado li {
-  font-family: var(--serif); font-size: clamp(1.3rem, 2vw, 1.75rem); line-height: 1.2;
-  padding: .85rem 0; border-bottom: 1px solid var(--linea); color: #6b7383;
-}
-.balanza-mercado { text-align: right; }
-.balanza-mercado .balanza-et { color: var(--oro-osc); }
-.balanza-mercado ul { border-top-color: var(--oro-osc); }
-.balanza-mercado li { color: var(--azul); font-size: clamp(1.6rem, 2.6vw, 2.3rem); }
-.balanza-eje {
-  align-self: stretch; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--e3);
-  font-family: var(--serif); font-size: 1.15rem; line-height: 1.3; text-align: center; color: var(--azul);
-}
-.balanza-eje::before, .balanza-eje::after { content: ""; width: 1px; flex: 1; min-height: 2rem; background: var(--oro-osc); }
-.balanza-eje span { max-width: 14ch; }
-
-.tasacion-pie {
-  max-width: var(--ancho); margin: var(--e6) auto 0; padding: var(--e4) var(--margen) 0;
-  display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: var(--e5); align-items: end;
-}
-.tasacion-pie p { color: var(--texto-2); max-width: 58ch; font-size: 1.08rem; }
-.tasacion-cta {
-  justify-self: end; font-weight: 600; font-size: 1.05rem; color: var(--azul); text-decoration: none;
-  padding-bottom: .35rem; border-bottom: 1px solid var(--oro-osc); transition: color .2s;
-}
-.tasacion-cta:hover { color: var(--oro-osc); }
-
-/* ══ Contacto: qué mandar para la tasación ═══════════════════════ */
-.pedido { grid-column: 1 / -1; margin-top: var(--e6); padding-top: var(--e4); border-top: 1px solid var(--linea-osc); }
-.pedido-et { font-family: var(--serif); font-size: clamp(1.3rem, 2vw, 1.7rem); color: #fff; }
-.pedido-datos { margin: var(--e4) 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--e3) var(--e4); }
-.pedido-datos dt { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 600; color: var(--oro); }
-.pedido-datos dd { margin: .4rem 0 0; color: var(--claro-2); max-width: 26ch; }
-.pedido-link { display: inline-block; margin-top: var(--e4); font-weight: 600; color: var(--oro-claro); text-decoration: none; border-bottom: 1px solid var(--oro); padding-bottom: .3rem; transition: color .2s; }
-.pedido-link:hover { color: #fff; }
-
-@media (max-width: 1100px) {
-  .operaciones { grid-template-columns: 1fr 1fr; }
-  .op { border-top: 1px solid var(--linea); }
-  .op:nth-child(odd) { border-left: 0; }
-  .op:nth-child(-n+2) { border-top: 0; }
-  .pedido-datos { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 760px) {
-  .hacemos { padding: var(--e5) 0 var(--e6); }
-  .hacemos-cab, .tasacion-pie { grid-template-columns: 1fr; gap: var(--e3); }
-  .operaciones { grid-template-columns: 1fr; margin-top: var(--e5); }
-  .op { border-left: 0; border-top: 1px solid var(--linea); padding: var(--e4) 0; }
-  .op:hover { background: none; }
-  .op:nth-child(-n+2) { border-top: 1px solid var(--linea); }
-  .op:first-child { border-top: 0; }
-  .op::before { display: none; }
-  .op-principal { margin: 0 calc(-1 * var(--margen)); padding-inline: var(--margen); }
-  .op-txt { max-width: none; }
-
-  .tasacion { padding-bottom: var(--e6); }
-  .balanza { grid-template-columns: 1fr; row-gap: var(--e4); margin-top: var(--e5); }
-  .balanza-mercado { text-align: left; }
-  .balanza-eje { flex-direction: row; gap: var(--e2); text-align: left; }
-  .balanza-eje::before { display: none; }
-  .balanza-eje::after { height: 1px; width: auto; min-height: 0; }
-  .balanza-eje span { max-width: 20ch; }
-  .tasacion-cta { justify-self: start; }
-  .tasacion-pie { margin-top: var(--e4); padding-top: 0; }
-
-  .pedido { margin-top: var(--e5); }
-  .pedido-datos { grid-template-columns: 1fr; gap: var(--e3); }
-  .pedido-datos dd { max-width: none; }
-}
 
 /* ══ WhatsApp fijo: abajo a la izquierda; volver arriba queda a la derecha ══ */
 .wa-flot {
