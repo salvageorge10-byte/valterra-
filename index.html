@@ -4,159 +4,214 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Valterra Real Estate · Inmobiliaria en CABA y Gran Buenos Aires</title>
-  <meta name="description" content="Inmobiliaria en CABA y Gran Buenos Aires. Tasaciones sin cargo, venta y alquiler de propiedades, acompañamiento en la compra y asesoramiento personalizado.">
+  <meta name="description" content="Inmobiliaria en CABA y Gran Buenos Aires. Venta y alquiler de propiedades, tasaciones sin cargo, acompañamiento en la compra e inversiones.">
   <meta name="theme-color" content="#071a33">
   <link rel="icon" href="img/monograma-v.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="efecto-scrolling.css">
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body id="top">
 
-<!-- PORTADA: foto de Recoleta a pantalla completa con el header encima -->
-<section class="portada es-fondo-fijo" style="--fondo:url('img/portada-recoleta-alvear.webp')">
-  <div class="portada-velo">
-    <header class="cab">
-      <nav class="cab-nav cab-nav-izq" aria-label="Secciones">
-        <a class="es-subraya" href="#como-vendemos">Cómo vendemos</a>
-        <a class="es-subraya" href="#servicios">Servicios</a>
-        <a class="es-subraya" href="#inversiones">Inversiones</a>
-      </nav>
-      <a class="cab-marca es-sube" href="#top" aria-label="Valterra Real Estate, inicio">
-        <img src="img/monograma-v.webp" alt="" width="72" height="54">
-        <span class="cab-nombre">Valterra</span>
-        <span class="cab-sub">Real Estate</span>
-      </a>
-      <div class="cab-der">
-        <nav class="cab-nav" aria-label="Más secciones">
-          <a class="es-subraya" href="#zona">Barrios</a>
-          <a class="es-subraya" href="#contacto">Contacto</a>
-        </nav>
-        <a class="cab-wa" href="https://wa.me/5491140676706" target="_blank" rel="noopener">
-          <span class="cab-wa-et">WhatsApp</span>
-          <span class="cab-wa-num">11 4067-6706</span>
-        </a>
-      </div>
-    </header>
-    <nav class="cab-nav-mob" aria-label="Secciones">
-      <a href="#como-vendemos">Cómo vendemos</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#inversiones">Inversiones</a>
-      <a href="#zona">Barrios</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+<!-- HEADER fijo: transparente sobre la portada, sólido al bajar -->
+<header class="cab" id="cab">
+  <nav class="cab-nav cab-nav-izq" aria-label="Secciones">
+    <a href="#propiedades">Propiedades</a>
+    <a href="#como-vendemos">Cómo vendemos</a>
+    <a href="#zonas">Zonas</a>
+  </nav>
 
-    <div class="portada-in" data-anim="fadeInUp">
-      <p class="kicker">Donde el valor encuentra su lugar.</p>
-      <h1>Vendé o alquilá tu propiedad en&nbsp;CABA y&nbsp;Gran&nbsp;Buenos&nbsp;Aires.</h1>
-      <p class="portada-lead">Tasaciones sin cargo y asesoramiento inmobiliario integral. Te acompañamos en todo el proceso, de la tasación al cierre.</p>
-      <a class="portada-cta es-flecha" href="https://wa.me/5491140676706?text=Hola%20Valterra%2C%20quiero%20pedir%20una%20tasaci%C3%B3n%20sin%20cargo." target="_blank" rel="noopener">Pedí tu tasación sin cargo por WhatsApp</a>
-    </div>
-    <p class="portada-placa"><span>Avenida Alvear al 1750, Recoleta</span> Foto del barrio, no es una propiedad en venta</p>
+  <a class="cab-marca" href="#top" aria-label="Valterra Real Estate, inicio">
+    <img src="img/monograma-v.webp" alt="" width="72" height="54">
+    <span class="cab-nombre">Valterra</span>
+    <span class="cab-sub">Real Estate</span>
+  </a>
+
+  <div class="cab-der">
+    <nav class="cab-nav" aria-label="Más secciones">
+      <a href="#inversiones">Inversiones</a>
+      <a href="#contacto">Tasaciones</a>
+    </nav>
+    <button class="cab-menu" type="button" aria-expanded="false" aria-controls="menu-mob">
+      <span class="cab-menu-txt">Menú</span>
+      <span class="cab-menu-ico" aria-hidden="true"><i></i><i></i></span>
+    </button>
+    <a class="cab-wa" href="https://wa.me/5491140676706" target="_blank" rel="noopener" aria-label="WhatsApp 11 4067-6706">
+      <svg class="cab-wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.27.49 1.7.63.71.23 1.36.2 1.88.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.97 1-3.62-.24-.37a9.78 9.78 0 0 1-1.5-5.22c0-5.41 4.41-9.81 9.84-9.81a9.8 9.8 0 0 1 9.82 9.83c0 5.41-4.41 9.8-9.83 9.8zm8.36-18.16A11.75 11.75 0 0 0 12.04.2C5.5.2.2 5.5.2 12.02c0 2.09.55 4.12 1.58 5.92L.1 24l6.2-1.63a11.8 11.8 0 0 0 5.73 1.46h.01c6.53 0 11.84-5.3 11.84-11.82 0-3.16-1.23-6.13-3.48-8.37z"/></svg>
+      <span class="cab-wa-txt"><span class="cab-wa-et">WhatsApp</span><span class="cab-wa-num">11 4067-6706</span></span>
+    </a>
   </div>
+</header>
+
+<!-- Menú de celular: pantalla completa -->
+<div class="menu-mob" id="menu-mob" hidden>
+  <nav aria-label="Menú">
+    <a href="#propiedades">Propiedades</a>
+    <a href="#valterra">Valterra</a>
+    <a href="#como-vendemos">Cómo vendemos</a>
+    <a href="#zonas">Zonas</a>
+    <a href="#inversiones">Inversiones</a>
+    <a href="#contacto">Tasaciones y contacto</a>
+  </nav>
+  <div class="menu-mob-pie">
+    <a href="https://wa.me/5491140676706" target="_blank" rel="noopener">WhatsApp · 11 4067-6706</a>
+    <a href="https://www.instagram.com/valterra.realestate/" target="_blank" rel="noopener">Instagram · @valterra.realestate</a>
+  </div>
+</div>
+
+<!-- 1. PORTADA -->
+<section class="hero" aria-labelledby="hero-tit">
+  <div class="hero-foto">
+    <img src="img/portada-recoleta-alvear.webp" width="1992" height="2286" alt="Avenida Alvear con edificios de estilo francés en Recoleta" fetchpriority="high">
+  </div>
+  <div class="hero-in">
+    <p class="hero-kicker" data-txt>Real Estate · Buenos Aires</p>
+    <h1 id="hero-tit" data-txt>Donde el valor encuentra su&nbsp;lugar.</h1>
+    <div class="hero-pie" data-txt>
+      <p>Venta y alquiler de propiedades, tasaciones sin cargo y asesoramiento para invertir.</p>
+      <a class="enlace enlace-claro" href="#propiedades">Ver propiedades</a>
+    </div>
+  </div>
+  <p class="hero-placa">Avenida Alvear, Recoleta<span>Foto del barrio</span></p>
+  <svg class="hero-marca" viewBox="0 0 1000 150" aria-hidden="true" preserveAspectRatio="xMidYMax meet"><text x="0" y="148" textLength="1000" lengthAdjust="spacing">VALTERRA</text></svg>
 </section>
 
 <main>
 
-  <!-- CÓMO VENDEMOS: el recorrido de una venta, en tres momentos -->
-  <section class="recorrido" id="como-vendemos">
-    <div class="folio folio-osc" data-anim="fadeInUp">
-      <h2 class="folio-tit">Cómo vendemos</h2>
-      <p class="folio-nota">Consejo Valterra</p>
-    </div>
-
-    <div class="recorrido-cab">
-      <p class="recorrido-tit" data-anim="fadeInLeft" data-anim-mobile="fadeInUp">Tres decisiones que definen una venta.</p>
-      <p class="recorrido-intro" data-anim="fadeInRight" data-anim-mobile="fadeInUp">Los criterios de nuestra serie de tips inmobiliarios, en el orden en que aparecen en una operación.</p>
-    </div>
-
-    <ol class="recorrido-linea">
-      <li class="etapa" data-anim="fadeInLeft" data-anim-mobile="fadeInUp">
-        <p class="etapa-momento">Antes de publicar</p>
-        <h3 class="etapa-nombre">El precio</h3>
-        <p class="etapa-frase">“El precio correcto no es el precio que querés. Es el precio que el mercado está dispuesto a pagar.”</p>
-        <p class="etapa-txt">Un precio correcto desde el comienzo genera consultas. Uno excesivo hace que la propiedad pierda tiempo, visibilidad y oportunidades.</p>
-        <p class="etapa-consejo"><span>Consejo Valterra · Tip #8</span>Una buena tasación no busca decirte lo que querés escuchar. Busca el precio que permita vender.</p>
-      </li>
-      <li class="etapa" data-anim="fadeInUp">
-        <p class="etapa-momento">Al mostrar la propiedad</p>
-        <h3 class="etapa-nombre">La presentación</h3>
-        <p class="etapa-frase">“La primera impresión vende.”</p>
-        <p class="etapa-txt">Una casa ordenada, limpia, luminosa y bien presentada ayuda al comprador a imaginarse viviendo allí.</p>
-        <p class="etapa-consejo"><span>Consejo Valterra · Tip #7</span>No siempre hace falta una gran inversión: preparar bien la propiedad antes de mostrarla suele alcanzar para que destaque.</p>
-      </li>
-      <li class="etapa" data-anim="fadeInRight" data-anim-mobile="fadeInUp">
-        <p class="etapa-momento">Al recibir ofertas</p>
-        <h3 class="etapa-nombre">La oferta</h3>
-        <p class="etapa-frase">“No todas las ofertas son iguales.”</p>
-        <ul class="etapa-factores" aria-label="Qué evaluar en una oferta">
-          <li>Precio ofrecido</li><li>Forma de pago</li><li>Plazos</li><li>Financiamiento</li><li>Condiciones</li><li>Fecha de entrega</li>
-        </ul>
-        <p class="etapa-consejo"><span>Consejo Valterra · Tip #9</span>La mejor oferta no siempre es la más alta: es la que tiene más posibilidades de convertirse en una operación concreta.</p>
-      </li>
-    </ol>
+  <!-- 2. BUSCADOR -->
+  <section class="buscador" aria-labelledby="buscador-tit">
+    <form class="busca" id="busca" data-txt>
+      <h2 class="busca-tit" id="buscador-tit">Buscá tu propiedad</h2>
+      <fieldset class="busca-op">
+        <legend class="sr">Operación</legend>
+        <label><input type="radio" name="op" value="comprar" checked><span>Comprar</span></label>
+        <label><input type="radio" name="op" value="alquilar"><span>Alquilar</span></label>
+      </fieldset>
+      <label class="busca-campo">
+        <span>Zona</span>
+        <select name="zona">
+          <option>Recoleta</option><option>Palermo</option><option>Belgrano</option><option>Núñez</option>
+          <option>Puerto Madero</option><option>San Isidro</option><option>Otra zona de CABA</option><option>Otra zona del Gran Buenos Aires</option>
+        </select>
+      </label>
+      <label class="busca-campo">
+        <span>Tipo</span>
+        <select name="tipo">
+          <option>Departamento</option><option>Casa</option><option>PH</option><option>Oficina</option><option>Local</option><option>Terreno</option>
+        </select>
+      </label>
+      <label class="busca-campo">
+        <span>Precio</span>
+        <select name="precio" data-comprar='["Hasta USD 200.000","USD 200.000 a 400.000","USD 400.000 a 800.000","Más de USD 800.000"]' data-alquilar='["Hasta USD 1.000 por mes","USD 1.000 a 2.000 por mes","Más de USD 2.000 por mes"]'>
+          <option>Hasta USD 200.000</option><option>USD 200.000 a 400.000</option><option>USD 400.000 a 800.000</option><option>Más de USD 800.000</option>
+        </select>
+      </label>
+      <button class="busca-btn" type="submit">Buscar</button>
+      <p class="busca-nota">Te respondemos por WhatsApp con las propiedades disponibles.</p>
+    </form>
   </section>
 
-  <!-- PROPIEDADES · INVERSIONES · DESARROLLOS (post institucional) -->
-  <section class="triada" aria-labelledby="triada-tit">
-    <div class="folio" data-anim="fadeInUp">
+  <!-- 3. PROPIEDADES SELECCIONADAS -->
+  <section class="props" id="propiedades" aria-labelledby="props-tit">
+    <div class="folio" data-txt>
+      <p class="folio-tit">Propiedades seleccionadas</p>
+      <p class="folio-nota">Fichas de muestra</p>
+    </div>
+    <div class="props-cab">
+      <h2 class="props-tit" id="props-tit" data-txt>Casas, pisos y departamentos, con lo esencial a&nbsp;la&nbsp;vista.</h2>
+    </div>
+
+    <div class="props-grid">
+      <article class="prop prop-a">
+        <a class="prop-foto" href="https://wa.me/5491140676706?text=Hola%20Valterra%2C%20me%20interesa%20el%20piso%20de%20%C3%A9poca%20en%20Recoleta." target="_blank" rel="noopener" data-clip>
+          <img src="img/prop-recoleta-piso.webp" width="1600" height="1200" loading="lazy" alt="Edificio de estilo francés con balcones de hierro en Recoleta">
+        </a>
+        <div class="ficha" data-txt>
+          <p class="ficha-op">Venta · Departamento</p>
+          <h3 class="ficha-nom">Piso de época en Recoleta</h3>
+          <p class="ficha-datos">210 m² · 5 ambientes · 3 dormitorios</p>
+          <p class="ficha-precio">USD 690.000</p>
+        </div>
+      </article>
+
+      <article class="prop prop-b">
+        <a class="prop-foto" href="https://wa.me/5491140676706?text=Hola%20Valterra%2C%20me%20interesa%20la%20casa%20en%20Belgrano%20R." target="_blank" rel="noopener" data-clip>
+          <img src="img/prop-belgrano-r-casa.webp" width="1555" height="1944" loading="lazy" alt="Casa de estilo pintoresco con balcón de madera en Belgrano R">
+        </a>
+        <div class="ficha" data-txt>
+          <p class="ficha-op">Venta · Casa</p>
+          <h3 class="ficha-nom">Casa en Belgrano R</h3>
+          <p class="ficha-datos">380 m² · 7 ambientes · 4 dormitorios · jardín</p>
+          <p class="ficha-precio">USD 1.150.000</p>
+        </div>
+      </article>
+
+      <article class="prop prop-c">
+        <a class="prop-foto" href="https://wa.me/5491140676706?text=Hola%20Valterra%2C%20me%20interesa%20el%20piso%20en%20Barrio%20Norte." target="_blank" rel="noopener" data-clip>
+          <img src="img/prop-barrio-norte-piso.webp" width="1200" height="1600" loading="lazy" alt="Fachada de piedra con balcones curvos y mansarda sobre la calle Callao">
+        </a>
+        <div class="ficha" data-txt>
+          <p class="ficha-op">Venta · Departamento</p>
+          <h3 class="ficha-nom">Piso en Barrio Norte</h3>
+          <p class="ficha-datos">160 m² · 4 ambientes · 3 dormitorios</p>
+          <p class="ficha-precio">USD 425.000</p>
+        </div>
+      </article>
+
+      <article class="prop prop-d">
+        <a class="prop-foto" href="https://wa.me/5491140676706?text=Hola%20Valterra%2C%20me%20interesa%20el%20departamento%20en%20alquiler%20en%20Nordelta." target="_blank" rel="noopener" data-clip>
+          <img src="img/prop-nordelta-depto.webp" width="1600" height="1066" loading="lazy" alt="Edificios bajos con pileta y parque en Nordelta">
+        </a>
+        <div class="ficha" data-txt>
+          <p class="ficha-op">Alquiler · Departamento</p>
+          <h3 class="ficha-nom">Departamento con amenities en Nordelta</h3>
+          <p class="ficha-datos">118 m² · 3 ambientes · 2 dormitorios · pileta</p>
+          <p class="ficha-precio">USD 1.600 <small>por mes</small></p>
+        </div>
+      </article>
+
+      <article class="prop prop-e">
+        <a class="prop-foto" href="https://wa.me/5491140676706?text=Hola%20Valterra%2C%20me%20interesa%20la%20casona%20en%20Belgrano%20R." target="_blank" rel="noopener" data-clip>
+          <img src="img/prop-belgrano-r-villa.webp" width="1400" height="819" loading="lazy" alt="Casona blanca con torre y portón de madera en Belgrano R">
+        </a>
+        <div class="ficha" data-txt>
+          <p class="ficha-op">Venta · Casa</p>
+          <h3 class="ficha-nom">Casona con torre en Belgrano R</h3>
+          <p class="ficha-datos">320 m² · 6 ambientes · 4 dormitorios · patio</p>
+          <p class="ficha-precio">USD 980.000</p>
+        </div>
+      </article>
+    </div>
+    <p class="props-nota" data-txt>Fichas de muestra con fotos de fachadas de cada barrio. <a href="https://wa.me/5491140676706?text=Hola%20Valterra%2C%20quiero%20saber%20qu%C3%A9%20propiedades%20tienen%20disponibles." target="_blank" rel="noopener">Consultá la disponibilidad actual por WhatsApp</a>.</p>
+  </section>
+
+  <!-- 4. PRESENTACIÓN DE VALTERRA -->
+  <section class="valterra" id="valterra" aria-labelledby="valterra-tit">
+    <div class="folio" data-txt>
       <p class="folio-tit">Valterra Real Estate</p>
-      <p class="folio-nota">Creamos valor a partir de cada oportunidad inmobiliaria</p>
-    </div>
-    <h2 class="sr" id="triada-tit">Propiedades, inversiones y desarrollos</h2>
-
-    <div class="triada-grid">
-      <figure class="triada-item es-zoom es-marco" data-anim="fadeInLeft" data-anim-mobile="fadeInUp">
-        <img src="img/caballito-barrio-ingles.webp" width="1400" height="1751" loading="lazy" alt="Casas bajas con jardín en el Barrio Inglés de Caballito">
-        <figcaption>
-          <span class="triada-palabra">Propiedades.</span>
-          <span class="triada-lugar">Barrio Inglés, Caballito</span>
-        </figcaption>
-      </figure>
-      <figure class="triada-item triada-item-medio es-zoom es-marco" data-anim="fadeInUp">
-        <img src="img/puerto-madero-madero-center.webp" width="1400" height="1750" loading="lazy" alt="Torres del Madero Center frente al dique en Puerto Madero">
-        <figcaption>
-          <span class="triada-palabra">Inversiones.</span>
-          <span class="triada-lugar">Madero Center, Puerto Madero</span>
-        </figcaption>
-      </figure>
-      <figure class="triada-item es-zoom es-marco" data-anim="fadeInRight" data-anim-mobile="fadeInUp">
-        <img src="img/florencio-varela-edificio-en-obra.webp" width="1400" height="1751" loading="lazy" alt="Edificio de ladrillo y hormigón en construcción en Florencio Varela">
-        <figcaption>
-          <span class="triada-palabra">Desarrollos.</span>
-          <span class="triada-lugar">Edificio en obra, Florencio Varela</span>
-        </figcaption>
-      </figure>
-    </div>
-    <p class="triada-bajada" data-anim="fadeInUp">Una mirada estratégica, profesional y personalizada para cada operación. <span>Fotos de los barrios: no son propiedades de Valterra.</span></p>
-  </section>
-
-
-  <!-- SERVICIOS -->
-  <section class="servicios" id="servicios">
-    <div class="folio" data-anim="fadeInUp">
-      <h2 class="folio-tit">Servicios</h2>
       <p class="folio-nota">Asesoramiento inmobiliario integral</p>
     </div>
+    <div class="valterra-cab">
+      <h2 class="valterra-tit" id="valterra-tit" data-txt>Creamos valor a partir de cada oportunidad inmobiliaria.</h2>
+      <div class="valterra-txt" data-txt>
+        <p>Te ayudamos a encontrar la propiedad que estás buscando, a vender, comprar o alquilar, con asesoramiento personalizado y acompañamiento durante todo el proceso.</p>
+        <p>Porque una operación inmobiliaria no es solamente una transacción: es una decisión importante que merece experiencia, compromiso y confianza.</p>
+      </div>
+    </div>
 
-    <dl class="registro" data-anim="fadeInUp">
+    <dl class="registro" data-stagger>
       <div class="fila">
         <dt>Tasaciones sin cargo</dt>
         <dd>El primer paso de cualquier venta o alquiler: saber a qué precio sale tu propiedad al mercado.</dd>
       </div>
       <div class="fila">
-        <dt>Venta y alquiler de propiedades</dt>
+        <dt>Venta y alquiler</dt>
         <dd>Te ayudamos a vender o alquilar, con asesoramiento personalizado y acompañamiento durante todo el proceso.</dd>
       </div>
       <div class="fila">
         <dt>Acompañamiento en la compra</dt>
         <dd>Te ayudamos a encontrar la propiedad que estás buscando.</dd>
-      </div>
-      <div class="fila">
-        <dt>Asesoramiento personalizado</dt>
-        <dd>Una mirada estratégica, profesional y personalizada para cada operación.</dd>
       </div>
       <div class="fila">
         <dt>Inversiones</dt>
@@ -165,97 +220,177 @@
     </dl>
   </section>
 
-  <!-- INVERSIONES: análisis Distrito IA sobre foto fija -->
-  <section class="banda banda-centro es-fondo-fijo" id="inversiones" style="--fondo:url('img/centro-desde-palacio-barolo.webp')">
-    <div class="banda-velo">
-      <div class="banda-in">
-        <div class="banda-txt" data-anim="fadeInLeft" data-anim-mobile="fadeInUp">
-          <p class="banda-et">Análisis · Septiembre 2026</p>
-          <h2 class="banda-tit">Distrito IA: el Microcentro se transforma.</h2>
-          <p>El Gobierno de la Ciudad envió a la Legislatura un proyecto de ley para crear el Distrito de Inteligencia Artificial en el Microcentro: atraer empresas, inversiones y talento, y promover la reconversión de la zona con distintos incentivos.</p>
-          <p>Pero la transformación no se trata solamente de tecnología. Se trata de personas, empresas, consumo, servicios, conectividad y nuevos usos para una de las áreas más emblemáticas de la Ciudad.</p>
-          <a class="banda-enlace es-flecha" href="https://www.instagram.com/p/DdZqRiBFm89/" target="_blank" rel="noopener">Leer el análisis completo</a>
-        </div>
-        <ul class="banda-usos" data-anim="fadeInRight" data-anim-mobile="fadeInUp" aria-label="Usos que analizamos">
-          <li>Oficinas</li>
-          <li>Locales</li>
-          <li>Viviendas</li>
-          <li>Inversión</li>
-          <li class="banda-usos-nota">Nuevos usos. Nuevas oportunidades.</li>
-        </ul>
+  <!-- 5. CÓMO VENDEMOS: título fijo a la izquierda, etapas que pasan a la derecha -->
+  <section class="recorrido" id="como-vendemos" aria-labelledby="recorrido-tit">
+    <div class="folio folio-osc" data-txt>
+      <p class="folio-tit">Cómo vendemos</p>
+      <p class="folio-nota">Consejo Valterra</p>
+    </div>
+
+    <div class="recorrido-in">
+      <div class="recorrido-cab">
+        <h2 class="recorrido-tit" id="recorrido-tit">Tres decisiones que definen una venta.</h2>
+        <p class="recorrido-intro">Los criterios de nuestra serie de tips inmobiliarios, en el orden en que aparecen en una operación.</p>
+        <a class="enlace enlace-oro" href="https://wa.me/5491140676706?text=Hola%20Valterra%2C%20quiero%20pedir%20una%20tasaci%C3%B3n%20sin%20cargo." target="_blank" rel="noopener">Pedí tu tasación sin cargo</a>
       </div>
-      <p class="banda-credito">El centro porteño desde el Palacio Barolo · Foto: Leo.silvero94</p>
+
+      <ol class="recorrido-linea">
+        <li class="etapa" data-txt>
+          <p class="etapa-momento">Antes de publicar</p>
+          <h3 class="etapa-nombre">El precio</h3>
+          <p class="etapa-frase">“El precio correcto no es el precio que querés. Es el precio que el mercado está dispuesto a pagar.”</p>
+          <p class="etapa-txt">Un precio correcto desde el comienzo genera consultas. Uno excesivo hace que la propiedad pierda tiempo, visibilidad y oportunidades.</p>
+          <p class="etapa-consejo"><span>Consejo Valterra · Tip #8</span>Una buena tasación no busca decirte lo que querés escuchar. Busca el precio que permita vender.</p>
+        </li>
+        <li class="etapa" data-txt>
+          <p class="etapa-momento">Al mostrar la propiedad</p>
+          <h3 class="etapa-nombre">La presentación</h3>
+          <p class="etapa-frase">“La primera impresión vende.”</p>
+          <p class="etapa-txt">Una casa ordenada, limpia, luminosa y bien presentada ayuda al comprador a imaginarse viviendo allí.</p>
+          <p class="etapa-consejo"><span>Consejo Valterra · Tip #7</span>No siempre hace falta una gran inversión: preparar bien la propiedad antes de mostrarla suele alcanzar para que destaque.</p>
+        </li>
+        <li class="etapa" data-txt>
+          <p class="etapa-momento">Al recibir ofertas</p>
+          <h3 class="etapa-nombre">La oferta</h3>
+          <p class="etapa-frase">“No todas las ofertas son iguales.”</p>
+          <ul class="etapa-factores" aria-label="Qué evaluar en una oferta">
+            <li>Precio ofrecido</li><li>Forma de pago</li><li>Plazos</li><li>Financiamiento</li><li>Condiciones</li><li>Fecha de entrega</li>
+          </ul>
+          <p class="etapa-consejo"><span>Consejo Valterra · Tip #9</span>La mejor oferta no siempre es la más alta: es la que tiene más posibilidades de convertirse en una operación concreta.</p>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <!-- CAMPO: frase propia sobre foto fija -->
-  <section class="banda banda-campo es-fondo-fijo" style="--fondo:url('img/campo-bonaerense.webp')" aria-labelledby="campo-tit">
-    <div class="banda-velo banda-velo-campo">
-      <div class="campo-in" data-anim="fadeInUp">
-        <p class="banda-et">Campos e inversiones rurales</p>
-        <h2 class="campo-tit" id="campo-tit">Donde hay tierra, hay trabajo. Donde hay trabajo, hay futuro.</h2>
-        <p class="campo-txt">Acompañamos y valorizamos las oportunidades que nacen de nuestra tierra, conectando campos, inversiones y proyectos con una mirada estratégica y de largo plazo.</p>
-      </div>
-      <p class="banda-credito">Campo en la provincia de Buenos Aires · Foto: lrargerich</p>
-    </div>
-  </section>
-
-  <!-- BARRIOS + ZONA + CONTACTO (bloque oscuro de cierre) -->
-  <section class="zona" id="zona">
-    <div class="folio folio-osc" data-anim="fadeInUp">
-      <h2 class="folio-tit">Barrios</h2>
+  <!-- 6. ZONAS -->
+  <section class="zonas" id="zonas" aria-labelledby="zonas-tit">
+    <div class="folio" data-txt>
+      <p class="folio-tit">Zonas</p>
       <p class="folio-nota">CABA y Gran Buenos Aires</p>
     </div>
-
-    <div class="es-tira tira-barrios" data-anim="fadeInUp" aria-label="Fotos de barrios de la Ciudad y el Gran Buenos Aires">
-      <div class="es-tira__pista">
-        <figure><img src="img/tira-belgrano.webp" width="900" height="1125" alt="Casa con enredadera en Sucre y Superí, Belgrano"><figcaption>Belgrano</figcaption></figure>
-        <figure><img src="img/tira-nunez.webp" width="1200" height="800" alt="Escaleras con jardín en Arias al 1900, Núñez"><figcaption>Núñez</figcaption></figure>
-        <figure><img src="img/tira-san-telmo.webp" width="900" height="1125" alt="Calle Balcarce con adoquines en San Telmo"><figcaption>San Telmo</figcaption></figure>
-        <figure><img src="img/tira-villa-urquiza.webp" width="1200" height="800" alt="Edificio de esquina con cúpula en Aizpurua 2690, Villa Urquiza"><figcaption>Villa Urquiza</figcaption></figure>
-        <figure><img src="img/tira-vicente-lopez.webp" width="900" height="1125" alt="Edificio esquinero del Café de París en Vicente López"><figcaption>Vicente López · GBA</figcaption></figure>
-        <figure><img src="img/tira-puerto-madero.webp" width="1200" height="800" alt="Torres de Puerto Madero vistas desde un jardín"><figcaption>Puerto Madero</figcaption></figure>
-      </div>
+    <div class="zonas-cab">
+      <h2 class="zonas-tit" id="zonas-tit" data-txt>De Recoleta a San&nbsp;Isidro.</h2>
+      <p class="zonas-intro" data-txt>Trabajamos en los 48 barrios de la Ciudad y en el Gran Buenos Aires. Estas son algunas de las zonas que más nos consultan.</p>
     </div>
 
-    <div class="zona-cuerpo">
-      <div class="zona-txt" data-anim="fadeInLeft" data-anim-mobile="fadeInUp">
-        <h3 class="zona-tit">Los 48 barrios de la Ciudad y el Gran&nbsp;Buenos&nbsp;Aires.</h3>
-        <p class="barrios" aria-label="Barrios de la Ciudad de Buenos Aires">
-          <span>Agronomía</span> <span>Almagro</span> <span>Balvanera</span> <span>Barracas</span> <span>Belgrano</span> <span>Boedo</span> <span>Caballito</span> <span>Chacarita</span> <span>Coghlan</span> <span>Colegiales</span> <span>Constitución</span> <span>Flores</span> <span>Floresta</span> <span>La Boca</span> <span>La Paternal</span> <span>Liniers</span> <span>Mataderos</span> <span>Monte Castro</span> <span>Montserrat</span> <span>Nueva Pompeya</span> <span>Núñez</span> <span class="hl">Palermo</span> <span>Parque Avellaneda</span> <span>Parque Chacabuco</span> <span>Parque Chas</span> <span>Parque Patricios</span> <span>Puerto Madero</span> <span class="hl">Recoleta</span> <span>Retiro</span> <span>Saavedra</span> <span>San Cristóbal</span> <span>San Nicolás</span> <span>San Telmo</span> <span>Vélez Sarsfield</span> <span>Versalles</span> <span>Villa Crespo</span> <span>Villa del Parque</span> <span>Villa Devoto</span> <span>Villa General Mitre</span> <span>Villa Lugano</span> <span>Villa Luro</span> <span>Villa Ortúzar</span> <span>Villa Pueyrredón</span> <span>Villa Real</span> <span>Villa Riachuelo</span> <span>Villa Santa Rita</span> <span>Villa Soldati</span> <span>Villa Urquiza</span>
-        </p>
-        <p class="zona-nota">Si tu propiedad está en el Gran Buenos Aires, escribinos igual: también trabajamos ahí.</p>
-      </div>
+    <div class="zonas-grid">
+      <figure class="zona z-recoleta">
+        <div class="zona-foto" data-clip><img src="img/zona-recoleta.webp" width="1200" height="1600" loading="lazy" alt="Edificios de estilo francés sobre la Avenida Alvear, Recoleta"></div>
+        <figcaption><span class="zona-nom">Recoleta</span><span class="zona-dato">CABA</span></figcaption>
+      </figure>
+      <figure class="zona z-palermo">
+        <div class="zona-foto" data-clip><img src="img/palermo-el-salvador-armenia.webp" width="1536" height="1920" loading="lazy" alt="Casa en esquina cubierta por una enredadera en Palermo"></div>
+        <figcaption><span class="zona-nom">Palermo</span><span class="zona-dato">CABA</span></figcaption>
+      </figure>
+      <figure class="zona z-belgrano">
+        <div class="zona-foto" data-clip><img src="img/tira-belgrano.webp" width="900" height="1125" loading="lazy" alt="Casa con enredadera en Sucre y Superí, Belgrano"></div>
+        <figcaption><span class="zona-nom">Belgrano</span><span class="zona-dato">CABA</span></figcaption>
+      </figure>
+      <figure class="zona z-nunez">
+        <div class="zona-foto" data-clip><img src="img/tira-nunez.webp" width="1200" height="800" loading="lazy" alt="Escaleras con jardín en Arias al 1900, Núñez"></div>
+        <figcaption><span class="zona-nom">Núñez</span><span class="zona-dato">CABA</span></figcaption>
+      </figure>
+      <figure class="zona z-madero">
+        <div class="zona-foto" data-clip><img src="img/tira-puerto-madero.webp" width="1200" height="800" loading="lazy" alt="Torres de Puerto Madero vistas desde un jardín"></div>
+        <figcaption><span class="zona-nom">Puerto Madero</span><span class="zona-dato">CABA</span></figcaption>
+      </figure>
+      <figure class="zona z-sanisidro">
+        <div class="zona-foto" data-clip><img src="img/san-isidro-casa-catedral.webp" width="2000" height="1333" loading="lazy" alt="Casona con galería de arcos frente a la Catedral de San Isidro"></div>
+        <figcaption><span class="zona-nom">San Isidro</span><span class="zona-dato">Gran Buenos Aires</span></figcaption>
+      </figure>
+    </div>
+    <p class="zonas-nota" data-txt>Fotos de los barrios, no son propiedades en venta. ¿Tu propiedad está en otra zona? <a href="https://wa.me/5491140676706" target="_blank" rel="noopener">Escribinos igual</a>.</p>
+  </section>
 
-      <figure class="zona-foto zona-foto-a" data-anim="fadeInRight" data-anim-mobile="fadeInUp">
-        <div class="es-flota">
-          <img src="img/palermo-el-salvador-armenia.webp" width="1536" height="1920" loading="lazy" alt="Casa en esquina cubierta por una enredadera en Palermo">
+  <!-- 7. INVERSIONES Y DESARROLLOS -->
+  <section class="inversiones" id="inversiones" aria-labelledby="inv-tit">
+    <div class="inv-banda" style="--fondo:url('img/centro-desde-palacio-barolo.webp')">
+      <div class="inv-banda-in">
+        <div class="folio folio-osc" data-txt>
+          <p class="folio-tit">Inversiones y desarrollos</p>
+          <p class="folio-nota">Análisis · Septiembre 2026</p>
         </div>
-        <figcaption class="placa placa-osc">
-          <span class="placa-lugar">El Salvador y Armenia, Palermo</span>
-          <span class="placa-nota">Foto del barrio · Roberto Fiadone</span>
-        </figcaption>
+        <div class="inv-cuerpo">
+          <div class="inv-txt" data-txt>
+            <h2 class="inv-tit" id="inv-tit">Distrito IA: el Microcentro se transforma.</h2>
+            <p>El Gobierno de la Ciudad envió a la Legislatura un proyecto de ley para crear el Distrito de Inteligencia Artificial en el Microcentro: atraer empresas, inversiones y talento, y promover la reconversión de la zona con distintos incentivos.</p>
+            <p>Pero la transformación no se trata solamente de tecnología. Se trata de personas, empresas, consumo, servicios, conectividad y nuevos usos para una de las áreas más emblemáticas de la Ciudad.</p>
+            <a class="enlace enlace-oro" href="https://www.instagram.com/p/DdZqRiBFm89/" target="_blank" rel="noopener">Leer el análisis completo</a>
+          </div>
+          <ul class="inv-usos" data-stagger aria-label="Usos que analizamos">
+            <li>Oficinas</li><li>Locales</li><li>Viviendas</li><li>Inversión</li>
+          </ul>
+        </div>
+        <p class="credito">El centro porteño desde el Palacio Barolo · Foto: Leo.silvero94</p>
+      </div>
+    </div>
+
+    <div class="inv-par">
+      <figure class="inv-fig inv-fig-a">
+        <div class="inv-foto" data-clip><img src="img/puerto-madero-madero-center.webp" width="1400" height="1750" loading="lazy" alt="Torres del Madero Center frente al dique en Puerto Madero"></div>
+        <figcaption><span class="inv-palabra">Inversiones.</span>Oficinas, locales y viviendas · Madero Center, Puerto Madero</figcaption>
       </figure>
-      <figure class="zona-foto zona-foto-b" data-anim="fadeInLeft" data-anim-mobile="fadeInUp">
-        <img src="img/san-isidro-casa-catedral.webp" width="2000" height="1333" loading="lazy" alt="Casona con galería de arcos frente a la Catedral de San Isidro">
-        <figcaption class="placa placa-osc">
-          <span class="placa-lugar">Frente a la Catedral, San Isidro · Gran Buenos Aires</span>
-          <span class="placa-nota">Foto de la zona · Fernando Martello</span>
-        </figcaption>
+      <div class="inv-par-txt" data-txt>
+        <p class="inv-frase">Propiedades. Inversiones. Desarrollos.</p>
+        <p>Una mirada estratégica, profesional y personalizada para cada operación.</p>
+      </div>
+      <figure class="inv-fig inv-fig-b">
+        <div class="inv-foto" data-clip><img src="img/florencio-varela-edificio-en-obra.webp" width="1400" height="1751" loading="lazy" alt="Edificio de ladrillo y hormigón en construcción en Florencio Varela"></div>
+        <figcaption><span class="inv-palabra">Desarrollos.</span>Edificio en obra · Florencio Varela</figcaption>
       </figure>
     </div>
 
-    <div class="contacto" id="contacto">
-      <p class="contacto-et" data-anim="fadeInUp">Tasaciones sin cargo</p>
-      <h2 class="contacto-tit" data-anim="fadeInLeft" data-anim-mobile="fadeInUp">Contanos qué propiedad tenés.</h2>
-      <div class="contacto-der" data-anim="fadeInRight" data-anim-mobile="fadeInUp">
-        <a class="contacto-wa" href="https://wa.me/5491140676706" target="_blank" rel="noopener">
-          <span class="contacto-wa-et es-flecha">Escribinos por WhatsApp</span>
+    <div class="campo" style="--fondo:url('img/campo-bonaerense.webp')">
+      <div class="campo-in" data-txt>
+        <p class="campo-et">Campos e inversiones rurales</p>
+        <p class="campo-tit">Donde hay tierra, hay trabajo. Donde hay trabajo, hay futuro.</p>
+        <p class="campo-txt">Acompañamos y valorizamos las oportunidades que nacen de nuestra tierra, conectando campos, inversiones y proyectos con una mirada estratégica y de largo plazo.</p>
+      </div>
+      <p class="credito">Campo en la provincia de Buenos Aires · Foto: lrargerich</p>
+    </div>
+  </section>
+
+  <!-- 8. PROPIEDAD PROTAGONISTA -->
+  <section class="prota" aria-labelledby="prota-tit">
+    <div class="prota-marco">
+      <div class="prota-foto">
+        <img src="img/protagonista-palermo-chico.webp" width="2400" height="1350" loading="lazy" alt="Residencia de estilo francés con mansarda y reja en Palermo Chico">
+      </div>
+    </div>
+    <div class="prota-ficha">
+      <div class="prota-cab" data-txt>
+        <p class="prota-et">Propiedad protagonista · Ficha de muestra</p>
+        <h2 class="prota-tit" id="prota-tit">Residencia en Palermo&nbsp;Chico</h2>
+        <p class="prota-lugar">Barrio Parque, Palermo Chico · CABA</p>
+      </div>
+      <dl class="prota-datos" data-stagger>
+        <div><dt>Precio</dt><dd class="prota-precio">USD 3.200.000</dd></div>
+        <div><dt>Superficie</dt><dd>780 m²</dd></div>
+        <div><dt>Plantas</dt><dd>4</dd></div>
+        <div><dt>Dormitorios</dt><dd>6</dd></div>
+        <div><dt>Exterior</dt><dd>Jardín y cochera</dd></div>
+      </dl>
+      <a class="enlace enlace-oro prota-cta" href="https://wa.me/5491140676706?text=Hola%20Valterra%2C%20me%20interesa%20la%20residencia%20en%20Palermo%20Chico." target="_blank" rel="noopener" data-txt>Consultar por esta propiedad</a>
+    </div>
+  </section>
+
+  <!-- 9. TASACIÓN Y CONTACTO -->
+  <section class="contacto" id="contacto" aria-labelledby="contacto-tit">
+    <div class="folio" data-txt>
+      <p class="folio-tit">Tasaciones sin cargo</p>
+      <p class="folio-nota">Venta · Alquiler · Compra · Inversiones</p>
+    </div>
+    <div class="contacto-in">
+      <h2 class="contacto-tit" id="contacto-tit" data-txt>Contanos qué propiedad&nbsp;tenés.</h2>
+      <div class="contacto-der" data-txt>
+        <p class="contacto-txt">El primer paso de cualquier venta o alquiler es saber a qué precio sale tu propiedad al mercado. La tasación no tiene costo.</p>
+        <a class="contacto-wa" href="https://wa.me/5491140676706?text=Hola%20Valterra%2C%20quiero%20pedir%20una%20tasaci%C3%B3n%20sin%20cargo." target="_blank" rel="noopener">
+          <span class="contacto-wa-et">Escribinos por WhatsApp</span>
           <span class="contacto-wa-num">11 4067-6706</span>
         </a>
         <ul class="contacto-redes">
-          <li><a class="es-subraya" href="https://www.instagram.com/valterra.realestate/" target="_blank" rel="noopener">Instagram · @valterra.realestate</a></li>
-          <li><a class="es-subraya" href="https://www.threads.com/@valterra.realestate" target="_blank" rel="noopener">Threads · @valterra.realestate</a></li>
+          <li><a href="https://www.instagram.com/valterra.realestate/" target="_blank" rel="noopener">Instagram · @valterra.realestate</a></li>
+          <li><a href="https://www.threads.com/@valterra.realestate" target="_blank" rel="noopener">Threads · @valterra.realestate</a></li>
         </ul>
       </div>
     </div>
@@ -271,22 +406,24 @@
   <details class="creditos">
     <summary>Créditos de las fotos</summary>
     <ul>
-      <li>Avenida Alvear, Recoleta — Gobierno de la Ciudad de Buenos Aires, <a href="https://commons.wikimedia.org/wiki/File:Avenida_Alvear,_Recoleta.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY 2.5 AR.</li>
+      <li>Avenida Alvear, Recoleta (portada) — Gobierno de la Ciudad de Buenos Aires, <a href="https://commons.wikimedia.org/wiki/File:Avenida_Alvear,_Recoleta.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY 2.5 AR.</li>
+      <li>Edificio de Guido y Luis Agote, Recoleta — Gelpgim22 (Sergio Panei Pirau), <a href="https://commons.wikimedia.org/wiki/File:Edificio_de_Guido_y_Luis_Agote,_Recoleta,_Buenos_Aires_II.JPG" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 3.0.</li>
+      <li>Casas en Belgrano R — Alv Erteynsteyn, <a href="https://commons.wikimedia.org/wiki/File:Casa_en_Belgrano_R-1.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> y <a href="https://commons.wikimedia.org/wiki/File:Casa_en_Belgrano_R-2.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
+      <li>Calle Callao — Anastasiya Lvova, <a href="https://commons.wikimedia.org/wiki/File:Callao_street,_BA_11.JPG" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY 3.0.</li>
+      <li>Ribera Nordelta — Grupo Monarca, <a href="https://commons.wikimedia.org/wiki/File:Ribera_Nordelta.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
+      <li>Casa de Palermo Chico — Gelpgim22 (Sergio Panei Pitrau), <a href="https://commons.wikimedia.org/wiki/File:Casa_de_Palermo_Chico_IV.JPG" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY 3.0.</li>
+      <li>Avenida Alvear (zona Recoleta) — Barc, <a href="https://commons.wikimedia.org/wiki/File:Buenos_Aires_-_Avenida_Alvear_-_20090104-o.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 3.0.</li>
       <li>El Salvador y Armenia, Palermo — Roberto Fiadone, <a href="https://commons.wikimedia.org/wiki/File:Enredadera_Palermo_Buenos_Aires_02.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
+      <li>Sucre y Superí, Belgrano — Roberto Fiadone, <a href="https://commons.wikimedia.org/wiki/File:Enredadera_Belgrano_Buenos_Aires.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
+      <li>Escaleras de Arias al 1900, Núñez — Roberto Fiadone, <a href="https://commons.wikimedia.org/wiki/File:Escaleras_N%C3%BA%C3%B1ez_Buenos_Aires_02.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
+      <li>Edificios de Puerto Madero — Banfield, <a href="https://commons.wikimedia.org/wiki/File:Puerto_Madero_Edificios.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY 3.0.</li>
       <li>Casa frente a la Catedral, San Isidro — Fernando Martello, <a href="https://commons.wikimedia.org/wiki/File:Casa_frente_a_catedral_sanisidro_01.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
       <li>El centro desde el Palacio Barolo — Leo.silvero94, <a href="https://commons.wikimedia.org/wiki/File:Buenos_Aires_panor%C3%A1mica.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
-      <li>Barrio Inglés, Caballito — OneEuropeanHeart, <a href="https://commons.wikimedia.org/wiki/File:Barrio_Ingl%C3%A9s,_Caballito,_Buenos_Aires,_Argentina_(4).jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY 4.0.</li>
       <li>Madero Center, Puerto Madero — Cambalachero, <a href="https://commons.wikimedia.org/wiki/File:Madero_Center.JPG" target="_blank" rel="noopener">Wikimedia Commons</a>, CC0.</li>
       <li>Edificio en construcción, Florencio Varela — Gelpgim22 (Sergio Moises Panei Pitrau), <a href="https://commons.wikimedia.org/wiki/File:Edificio_en_construcci%C3%B3n,_Varela_III.JPG" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
       <li>Campo en la provincia de Buenos Aires — lrargerich, <a href="https://commons.wikimedia.org/wiki/File:Las_Pampas.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY 2.0.</li>
-      <li>Sucre y Superí, Belgrano — Roberto Fiadone, <a href="https://commons.wikimedia.org/wiki/File:Enredadera_Belgrano_Buenos_Aires.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
-      <li>Escaleras de Arias al 1900, Núñez — Roberto Fiadone, <a href="https://commons.wikimedia.org/wiki/File:Escaleras_N%C3%BA%C3%B1ez_Buenos_Aires_02.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
-      <li>Calle Balcarce, San Telmo — Banfield, <a href="https://commons.wikimedia.org/wiki/File:Calle_Balcarce_entre_San_Lorenzo_y_Chile,_San_Telmo,_Buenos_Aires.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 3.0.</li>
-      <li>Aizpurua 2690, Villa Urquiza — Roberto Fiadone, <a href="https://commons.wikimedia.org/wiki/File:Ex_edificio_%22La_Bola_de_Nieve%22,_Aizpurua_2690,_Buenos_Aires_02.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
-      <li>Café de París, Vicente López — Lombardia1, <a href="https://commons.wikimedia.org/wiki/File:Caf%C3%A9_de_Par%C3%ADs_en_Vicente_L%C3%B3pez,_Provincia_de_Buenos_Aires.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
-      <li>Edificios de Puerto Madero — Banfield, <a href="https://commons.wikimedia.org/wiki/File:Puerto_Madero_Edificios.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY 3.0.</li>
     </ul>
-    <p>Las fotos muestran barrios y zonas; no son propiedades de Valterra ni están en venta. Recortes y compresión propios.</p>
+    <p>Las propiedades y sus precios son fichas de muestra. Las fotos muestran fachadas y barrios reales que no están a la venta. Recortes y compresión propios.</p>
   </details>
 </footer>
 
@@ -295,10 +432,8 @@
   <span class="wa-flot-txt">WhatsApp</span>
 </a>
 
-<a href="#top" class="es-arriba" aria-label="Volver arriba">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-</a>
-
-<script src="efecto-scrolling.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="valterra.js" defer></script>
 </body>
 </html>
