@@ -47,7 +47,6 @@ function animar() {
 
   // portada: entrada en cascada y foto que se aleja apenas al bajar
   gsap.fromTo('.hero [data-txt]', { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 1.1, ease: suave, stagger: .14, delay: .15 });
-  gsap.fromTo('.hero-marca', { yPercent: 18, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 1.4, ease: suave, delay: .35 });
   gsap.to('.hero-foto img', { yPercent: -8, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
 
   // textos: aparición suave

@@ -74,43 +74,9 @@
     </div>
   </div>
   <p class="hero-placa">Avenida Alvear, Recoleta<span>Foto del barrio</span></p>
-  <svg class="hero-marca" viewBox="0 0 1000 150" aria-hidden="true" preserveAspectRatio="xMidYMax meet"><text x="0" y="148" textLength="1000" lengthAdjust="spacing">VALTERRA</text></svg>
 </section>
 
 <main>
-
-  <!-- 2. BUSCADOR -->
-  <section class="buscador" aria-labelledby="buscador-tit">
-    <form class="busca" id="busca" data-txt>
-      <h2 class="busca-tit" id="buscador-tit">Buscá tu propiedad</h2>
-      <fieldset class="busca-op">
-        <legend class="sr">Operación</legend>
-        <label><input type="radio" name="op" value="comprar" checked><span>Comprar</span></label>
-        <label><input type="radio" name="op" value="alquilar"><span>Alquilar</span></label>
-      </fieldset>
-      <label class="busca-campo">
-        <span>Zona</span>
-        <select name="zona">
-          <option>Recoleta</option><option>Palermo</option><option>Belgrano</option><option>Núñez</option>
-          <option>Puerto Madero</option><option>San Isidro</option><option>Otra zona de CABA</option><option>Otra zona del Gran Buenos Aires</option>
-        </select>
-      </label>
-      <label class="busca-campo">
-        <span>Tipo</span>
-        <select name="tipo">
-          <option>Departamento</option><option>Casa</option><option>PH</option><option>Oficina</option><option>Local</option><option>Terreno</option>
-        </select>
-      </label>
-      <label class="busca-campo">
-        <span>Precio</span>
-        <select name="precio" data-comprar='["Hasta USD 200.000","USD 200.000 a 400.000","USD 400.000 a 800.000","Más de USD 800.000"]' data-alquilar='["Hasta USD 1.000 por mes","USD 1.000 a 2.000 por mes","Más de USD 2.000 por mes"]'>
-          <option>Hasta USD 200.000</option><option>USD 200.000 a 400.000</option><option>USD 400.000 a 800.000</option><option>Más de USD 800.000</option>
-        </select>
-      </label>
-      <button class="busca-btn" type="submit">Buscar</button>
-      <p class="busca-nota">Te respondemos por WhatsApp con las propiedades disponibles.</p>
-    </form>
-  </section>
 
   <!-- 3. PROPIEDADES SELECCIONADAS -->
   <section class="props" id="propiedades" aria-labelledby="props-tit">
@@ -130,8 +96,16 @@
         <div class="ficha" data-txt>
           <p class="ficha-op">Venta · Departamento</p>
           <h3 class="ficha-nom">Piso de época en Recoleta</h3>
-          <p class="ficha-datos">210 m² · 5 ambientes · 3 dormitorios</p>
-          <p class="ficha-precio">USD 690.000</p>
+          <p class="ficha-lugar">Recoleta, CABA</p>
+          <dl class="ficha-datos">
+            <div><dt>Superficie</dt><dd>210 m²</dd></div>
+            <div><dt>Ambientes</dt><dd>5</dd></div>
+            <div><dt>Dormitorios</dt><dd>3</dd></div>
+          </dl>
+          <div class="ficha-pie">
+            <p class="ficha-precio">USD 595.000</p>
+            <a class="ficha-cta" href="https://wa.me/5491140676706?text=Hola%20Valterra%2C%20me%20interesa%20el%20piso%20de%20%C3%A9poca%20en%20Recoleta." target="_blank" rel="noopener">Consultar</a>
+          </div>
         </div>
       </article>
 
@@ -140,10 +114,58 @@
           <img src="img/prop-belgrano-r-casa.webp" width="1555" height="1944" loading="lazy" alt="Casa de estilo pintoresco con balcón de madera en Belgrano R">
         </a>
         <div class="ficha" data-txt>
-          <p class="ficha-op">Venta · Casa</p>
+          <p class="ficha-op">Venta · Casa con jardín</p>
           <h3 class="ficha-nom">Casa en Belgrano R</h3>
-          <p class="ficha-datos">380 m² · 7 ambientes · 4 dormitorios · jardín</p>
-          <p class="ficha-precio">USD 1.150.000</p>
+          <p class="ficha-lugar">Belgrano R, CABA</p>
+          <dl class="ficha-datos">
+            <div><dt>Superficie</dt><dd>380 m²</dd></div>
+            <div><dt>Ambientes</dt><dd>7</dd></div>
+            <div><dt>Dormitorios</dt><dd>4</dd></div>
+          </dl>
+          <div class="ficha-pie">
+            <p class="ficha-precio">USD 1.050.000</p>
+            <a class="ficha-cta" href="https://wa.me/5491140676706?text=Hola%20Valterra%2C%20me%20interesa%20la%20casa%20en%20Belgrano%20R." target="_blank" rel="noopener">Consultar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="prop prop-d">
+        <a class="prop-foto" href="https://wa.me/5491140676706?text=Hola%20Valterra%2C%20me%20interesa%20el%20departamento%20en%20alquiler%20en%20Nordelta." target="_blank" rel="noopener" data-clip>
+          <img src="img/prop-nordelta-depto.webp" width="1600" height="1066" loading="lazy" alt="Edificios bajos con pileta y parque en Nordelta">
+        </a>
+        <div class="ficha" data-txt>
+          <p class="ficha-op">Alquiler · Departamento con pileta</p>
+          <h3 class="ficha-nom">Departamento con amenities en Nordelta</h3>
+          <p class="ficha-lugar">Nordelta, Tigre</p>
+          <dl class="ficha-datos">
+            <div><dt>Superficie</dt><dd>118 m²</dd></div>
+            <div><dt>Ambientes</dt><dd>3</dd></div>
+            <div><dt>Dormitorios</dt><dd>2</dd></div>
+          </dl>
+          <div class="ficha-pie">
+            <p class="ficha-precio">USD 1.300 <small>por mes</small></p>
+            <a class="ficha-cta" href="https://wa.me/5491140676706?text=Hola%20Valterra%2C%20me%20interesa%20el%20departamento%20en%20alquiler%20en%20Nordelta." target="_blank" rel="noopener">Consultar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="prop prop-e">
+        <a class="prop-foto" href="https://wa.me/5491140676706?text=Hola%20Valterra%2C%20me%20interesa%20la%20casona%20en%20Belgrano%20R." target="_blank" rel="noopener" data-clip>
+          <img src="img/prop-belgrano-r-villa.webp" width="1400" height="819" loading="lazy" alt="Casona blanca con torre y portón de madera en Belgrano R">
+        </a>
+        <div class="ficha" data-txt>
+          <p class="ficha-op">Venta · Casa con patio</p>
+          <h3 class="ficha-nom">Casona con torre en Belgrano R</h3>
+          <p class="ficha-lugar">Belgrano R, CABA</p>
+          <dl class="ficha-datos">
+            <div><dt>Superficie</dt><dd>320 m²</dd></div>
+            <div><dt>Ambientes</dt><dd>6</dd></div>
+            <div><dt>Dormitorios</dt><dd>4</dd></div>
+          </dl>
+          <div class="ficha-pie">
+            <p class="ficha-precio">USD 885.000</p>
+            <a class="ficha-cta" href="https://wa.me/5491140676706?text=Hola%20Valterra%2C%20me%20interesa%20la%20casona%20en%20Belgrano%20R." target="_blank" rel="noopener">Consultar</a>
+          </div>
         </div>
       </article>
 
@@ -154,36 +176,21 @@
         <div class="ficha" data-txt>
           <p class="ficha-op">Venta · Departamento</p>
           <h3 class="ficha-nom">Piso en Barrio Norte</h3>
-          <p class="ficha-datos">160 m² · 4 ambientes · 3 dormitorios</p>
-          <p class="ficha-precio">USD 425.000</p>
+          <p class="ficha-lugar">Barrio Norte, CABA</p>
+          <dl class="ficha-datos">
+            <div><dt>Superficie</dt><dd>160 m²</dd></div>
+            <div><dt>Ambientes</dt><dd>4</dd></div>
+            <div><dt>Dormitorios</dt><dd>3</dd></div>
+          </dl>
+          <div class="ficha-pie">
+            <p class="ficha-precio">USD 455.000</p>
+            <a class="ficha-cta" href="https://wa.me/5491140676706?text=Hola%20Valterra%2C%20me%20interesa%20el%20piso%20en%20Barrio%20Norte." target="_blank" rel="noopener">Consultar</a>
+          </div>
         </div>
       </article>
 
-      <article class="prop prop-d">
-        <a class="prop-foto" href="https://wa.me/5491140676706?text=Hola%20Valterra%2C%20me%20interesa%20el%20departamento%20en%20alquiler%20en%20Nordelta." target="_blank" rel="noopener" data-clip>
-          <img src="img/prop-nordelta-depto.webp" width="1600" height="1066" loading="lazy" alt="Edificios bajos con pileta y parque en Nordelta">
-        </a>
-        <div class="ficha" data-txt>
-          <p class="ficha-op">Alquiler · Departamento</p>
-          <h3 class="ficha-nom">Departamento con amenities en Nordelta</h3>
-          <p class="ficha-datos">118 m² · 3 ambientes · 2 dormitorios · pileta</p>
-          <p class="ficha-precio">USD 1.600 <small>por mes</small></p>
-        </div>
-      </article>
-
-      <article class="prop prop-e">
-        <a class="prop-foto" href="https://wa.me/5491140676706?text=Hola%20Valterra%2C%20me%20interesa%20la%20casona%20en%20Belgrano%20R." target="_blank" rel="noopener" data-clip>
-          <img src="img/prop-belgrano-r-villa.webp" width="1400" height="819" loading="lazy" alt="Casona blanca con torre y portón de madera en Belgrano R">
-        </a>
-        <div class="ficha" data-txt>
-          <p class="ficha-op">Venta · Casa</p>
-          <h3 class="ficha-nom">Casona con torre en Belgrano R</h3>
-          <p class="ficha-datos">320 m² · 6 ambientes · 4 dormitorios · patio</p>
-          <p class="ficha-precio">USD 980.000</p>
-        </div>
-      </article>
     </div>
-    <p class="props-nota" data-txt>Fichas de muestra con fotos de fachadas de cada barrio. <a href="https://wa.me/5491140676706?text=Hola%20Valterra%2C%20quiero%20saber%20qu%C3%A9%20propiedades%20tienen%20disponibles." target="_blank" rel="noopener">Consultá la disponibilidad actual por WhatsApp</a>.</p>
+    <p class="props-nota" data-txt>Fichas de muestra con fotos de fachadas de cada barrio. Precios calculados con el valor de mercado del metro cuadrado de cada zona, octubre de 2026. <a href="https://wa.me/5491140676706?text=Hola%20Valterra%2C%20quiero%20saber%20qu%C3%A9%20propiedades%20tienen%20disponibles." target="_blank" rel="noopener">Consultá la disponibilidad actual por WhatsApp</a>.</p>
   </section>
 
   <!-- 4. PRESENTACIÓN DE VALTERRA -->
@@ -364,7 +371,7 @@
         <p class="prota-lugar">Barrio Parque, Palermo Chico · CABA</p>
       </div>
       <dl class="prota-datos" data-stagger>
-        <div><dt>Precio</dt><dd class="prota-precio">USD 3.200.000</dd></div>
+        <div><dt>Precio</dt><dd class="prota-precio">USD 2.900.000</dd></div>
         <div><dt>Superficie</dt><dd>780 m²</dd></div>
         <div><dt>Plantas</dt><dd>4</dd></div>
         <div><dt>Dormitorios</dt><dd>6</dd></div>
@@ -395,6 +402,39 @@
       </div>
     </div>
   </section>
+  <!-- 10. BUSCADOR -->
+  <section class="buscador" aria-labelledby="buscador-tit">
+    <form class="busca" id="busca" data-txt>
+      <h2 class="busca-tit" id="buscador-tit">Buscá tu propiedad</h2>
+      <fieldset class="busca-op">
+        <legend class="sr">Operación</legend>
+        <label><input type="radio" name="op" value="comprar" checked><span>Comprar</span></label>
+        <label><input type="radio" name="op" value="alquilar"><span>Alquilar</span></label>
+      </fieldset>
+      <label class="busca-campo">
+        <span>Zona</span>
+        <select name="zona">
+          <option>Recoleta</option><option>Palermo</option><option>Belgrano</option><option>Núñez</option>
+          <option>Puerto Madero</option><option>San Isidro</option><option>Otra zona de CABA</option><option>Otra zona del Gran Buenos Aires</option>
+        </select>
+      </label>
+      <label class="busca-campo">
+        <span>Tipo</span>
+        <select name="tipo">
+          <option>Departamento</option><option>Casa</option><option>PH</option><option>Oficina</option><option>Local</option><option>Terreno</option>
+        </select>
+      </label>
+      <label class="busca-campo">
+        <span>Precio</span>
+        <select name="precio" data-comprar='["Hasta USD 200.000","USD 200.000 a 400.000","USD 400.000 a 800.000","Más de USD 800.000"]' data-alquilar='["Hasta USD 1.000 por mes","USD 1.000 a 2.000 por mes","Más de USD 2.000 por mes"]'>
+          <option>Hasta USD 200.000</option><option>USD 200.000 a 400.000</option><option>USD 400.000 a 800.000</option><option>Más de USD 800.000</option>
+        </select>
+      </label>
+      <button class="busca-btn" type="submit">Buscar</button>
+      <p class="busca-nota">Te respondemos por WhatsApp con las propiedades disponibles.</p>
+    </form>
+  </section>
+
 </main>
 
 <footer class="pie">

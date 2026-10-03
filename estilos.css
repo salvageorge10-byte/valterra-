@@ -144,7 +144,7 @@ p { margin: 0; text-wrap: pretty; }
 }
 .hero-in {
   position: relative; z-index: 1; width: 100%; max-width: var(--ancho); margin: 0 auto;
-  padding: 0 var(--margen) calc(15vw + var(--e4));
+  padding: 0 var(--margen) clamp(4rem, 9vw, 7.5rem);
 }
 .hero-kicker { font-size: .76rem; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--oro-claro); }
 .hero h1 { margin-top: var(--e3); font-size: clamp(2.7rem, 6.4vw, 6.2rem); line-height: 1; letter-spacing: -.012em; max-width: 12ch; }
@@ -156,15 +156,8 @@ p { margin: 0; text-wrap: pretty; }
   padding-right: .8rem; border-right: 1px solid var(--oro); text-shadow: 0 1px 8px rgba(0, 0, 0, .6);
 }
 .hero-placa span { display: block; font-family: var(--sans); font-size: .72rem; color: #d7deea; margin-top: .15rem; }
-/* la palabra VALTERRA ocupa todo el ancho y se apoya en el borde inferior: su base se funde con el buscador */
-.hero-marca {
-  position: absolute; z-index: 1; left: var(--margen); right: var(--margen); bottom: -1.6vw;
-  width: calc(100% - 2 * var(--margen)); height: auto; overflow: visible;
-}
-.hero-marca text { font-family: var(--serif); font-size: 196px; fill: var(--marfil); }
-
-/* ══ 2. BUSCADOR ════════════════════════════════════ */
-.buscador { position: relative; z-index: 2; padding: var(--e6) 0 0; }
+/* ══ 10. BUSCADOR (cierre de la página) ═════════════ */
+.buscador { position: relative; z-index: 2; padding: 0 0 var(--seccion); }
 .busca {
   max-width: var(--ancho); margin: 0 auto; padding: 0 var(--margen);
   display: grid; grid-template-columns: auto repeat(3, minmax(0, 1fr)) auto; align-items: end; gap: 0 var(--e4);
@@ -209,36 +202,51 @@ p { margin: 0; text-wrap: pretty; }
 .props-tit { font-size: clamp(2.1rem, 4.4vw, 3.9rem); line-height: 1.06; color: var(--azul); max-width: 20ch; }
 .props-grid {
   max-width: var(--ancho); margin: var(--e6) auto 0; padding: 0 var(--margen);
-  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--e4); row-gap: var(--e7);
-  align-items: start;
+  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--e5); row-gap: var(--e7);
+  align-items: end;
 }
 .prop { margin: 0; min-width: 0; }
 .prop-foto { display: block; overflow: hidden; background: #d9d3c6; }
 .prop-foto img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2, .7, .2, 1); }
 .prop-foto:hover img { transform: scale(1.04); }
-.prop-a { grid-column: 1 / 8; }
-.prop-a .prop-foto { aspect-ratio: 4 / 3; }
-.prop-b { grid-column: 9 / 13; margin-top: var(--e8); }
-.prop-b .prop-foto { aspect-ratio: 4 / 5; }
-.prop-c { grid-column: 2 / 6; }
-.prop-c .prop-foto { aspect-ratio: 3 / 4; }
-.prop-d { grid-column: 7 / 13; margin-top: var(--e7); }
-.prop-d .prop-foto { aspect-ratio: 3 / 2; }
-.prop-e { grid-column: 3 / 11; }
-.prop-e .prop-foto { aspect-ratio: 16 / 9; }
 
-.ficha {
-  margin-top: var(--e3); display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--e4); row-gap: .35rem;
-  padding-top: var(--e2); border-top: 1px solid var(--linea);
+/* destacada: foto grande y ficha al costado, apoyada abajo */
+.prop-a { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--e5); align-items: end; }
+.prop-a .prop-foto { grid-column: 1 / 9; aspect-ratio: 4 / 3; }
+.prop-a .ficha { grid-column: 9 / 13; margin-top: 0; }
+.prop-a .ficha-nom { font-size: clamp(1.8rem, 2.6vw, 2.4rem); }
+.prop-a .ficha-precio { font-size: clamp(1.7rem, 2.3vw, 2.1rem); }
+/* filas de a dos, con proporciones cruzadas */
+.prop-b { grid-column: 1 / 6; }
+.prop-b .prop-foto { aspect-ratio: 4 / 5; }
+.prop-d { grid-column: 7 / 13; }
+.prop-d .prop-foto { aspect-ratio: 4 / 3; }
+.prop-e { grid-column: 1 / 8; }
+.prop-e .prop-foto { aspect-ratio: 3 / 2; }
+.prop-c { grid-column: 9 / 13; }
+.prop-c .prop-foto { aspect-ratio: 3 / 4; }
+
+.ficha { margin-top: var(--e3); }
+.ficha-op { font-size: .7rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--oro-osc); }
+.ficha-nom { margin-top: .6rem; font-size: clamp(1.4rem, 1.9vw, 1.75rem); line-height: 1.15; color: var(--azul); }
+.ficha-lugar { margin-top: .35rem; font-size: .95rem; color: var(--texto-2); }
+.ficha-datos {
+  margin: var(--e3) 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea);
 }
-.ficha-op { grid-column: 1 / -1; font-size: .7rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--oro-osc); }
-.ficha-nom { grid-column: 1 / -1; font-size: clamp(1.35rem, 1.9vw, 1.75rem); line-height: 1.15; color: var(--azul); }
-.ficha-precio { grid-row: 3; grid-column: 2; align-self: baseline; font-family: var(--serif); font-size: clamp(1.2rem, 1.6vw, 1.45rem); color: var(--azul); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.ficha-precio small { font-family: var(--sans); font-size: .78rem; color: var(--texto-2); }
-.ficha-datos { grid-row: 3; grid-column: 1; align-self: baseline; font-size: .95rem; color: var(--texto-2); }
-/* fichas angostas: el precio va debajo de los datos, no al costado */
-.prop-b .ficha, .prop-c .ficha { grid-template-columns: 1fr; }
-.prop-b .ficha-precio, .prop-c .ficha-precio { grid-row: auto; grid-column: 1; margin-top: .3rem; }
+.ficha-datos > div { padding: .8rem .9rem .85rem; border-left: 1px solid var(--linea); min-width: 0; }
+.ficha-datos > div:first-child { padding-left: 0; border-left: 0; }
+.ficha-datos dt { font-size: .64rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--texto-2); }
+.ficha-datos dd { margin: .25rem 0 0; font-family: var(--serif); font-size: 1.15rem; color: var(--azul); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ficha-pie { margin-top: var(--e3); display: flex; align-items: baseline; justify-content: space-between; gap: var(--e3); flex-wrap: wrap; }
+.ficha-precio { font-family: var(--serif); font-size: clamp(1.4rem, 1.8vw, 1.65rem); color: var(--azul); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ficha-precio small { font-family: var(--sans); font-size: .8rem; color: var(--texto-2); }
+.ficha-cta {
+  font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--azul);
+  text-decoration: none; padding: .35rem 0; border-bottom: 1px solid var(--oro-osc); transition: color .2s;
+}
+.ficha-cta::after { content: " →"; }
+.ficha-cta:hover { color: var(--oro-osc); }
 .props-nota { max-width: var(--ancho); margin: var(--e7) auto 0; padding: 0 var(--margen); font-size: .9rem; color: var(--texto-2); }
 .props-nota a { color: var(--azul); font-weight: 600; text-underline-offset: 3px; }
 
@@ -424,9 +432,9 @@ p { margin: 0; text-wrap: pretty; }
 .creditos li { margin: .3rem 0; }
 .creditos a { color: var(--oro-claro); }
 
-/* ── WhatsApp flotante (abajo a la izquierda) ───── */
+/* ── WhatsApp flotante (abajo a la derecha) ─────── */
 .wa-flot {
-  position: fixed; left: 24px; bottom: 24px; z-index: 40;
+  position: fixed; right: 24px; bottom: 24px; z-index: 40;
   display: grid; place-items: center; width: 60px; height: 60px; border-radius: 50%;
   background: #25d366; color: #fff; box-shadow: 0 10px 30px rgba(0, 0, 0, .28);
   transition: transform .2s;
@@ -470,6 +478,10 @@ p { margin: 0; text-wrap: pretty; }
   .recorrido-in { grid-template-columns: 1fr; gap: var(--e6); }
   .recorrido-cab { position: static; }
   .prota-ficha { grid-template-columns: 1fr; }
+  .prop-a .prop-foto, .prop-a .ficha { grid-column: 1 / -1; }
+  .prop-a .ficha { margin-top: var(--e3); max-width: 34rem; }
+  .prop-b, .prop-e { grid-column: 1 / 7; }
+  .prop-d, .prop-c { grid-column: 7 / 13; }
   .prota-cta { grid-column: 1; }
 }
 
@@ -479,26 +491,23 @@ p { margin: 0; text-wrap: pretty; }
   .folio { flex-direction: column; gap: .2rem; }
 
   .hero { min-height: 100svh; }
-  .hero-in { padding-bottom: calc(15vw + var(--e5)); }
+  .hero-in { padding-bottom: var(--e6); }
   .hero h1 { font-size: clamp(2.5rem, 11.5vw, 3.4rem); }
   .hero-pie { margin-top: var(--e4); gap: var(--e4); }
   .hero-pie p { font-size: 1.02rem; }
   .hero-placa { top: calc(var(--cab-alto) + var(--e3)); font-size: .82rem; }
 
-  .buscador { padding-top: var(--e5); }
   .busca { grid-template-columns: 1fr; row-gap: var(--e3); }
   .busca-tit { margin-bottom: var(--e2); }
   .busca-btn { width: 100%; padding: 1.2rem; }
 
   .props-grid, .zonas-grid { display: flex; flex-direction: column; row-gap: var(--e6); margin-top: var(--e6); }
   .prop, .zona { width: 100%; margin-top: 0 !important; }
-  .prop-a { margin-inline: calc(-1 * var(--margen)); width: calc(100% + 2 * var(--margen)); }
-  .prop-a .ficha { margin-inline: var(--margen); }
-  .prop-b, .prop-d { padding-left: 12%; }
-  .prop-c, .prop-e { padding-right: 12%; }
-  .ficha { grid-template-columns: 1fr; }
-  .ficha-precio { grid-row: auto; grid-column: 1; margin-top: .3rem; }
-  .ficha-datos { grid-row: auto; }
+  .prop-a { display: block; }
+  .prop-a .prop-foto, .prop .prop-foto { aspect-ratio: 4 / 3; margin-inline: calc(-1 * var(--margen)); width: calc(100% + 2 * var(--margen)); }
+  .prop-b .prop-foto, .prop-c .prop-foto { aspect-ratio: 4 / 5; }
+  .prop-a .ficha { margin-top: var(--e3); }
+  .ficha-datos > div { padding-inline: .7rem; }
   .props-nota { margin-top: var(--e6); }
 
   .valterra-cab, .zonas-cab, .inv-cuerpo, .contacto-in { grid-template-columns: 1fr; gap: var(--e4); }
@@ -533,7 +542,7 @@ p { margin: 0; text-wrap: pretty; }
   .pie { grid-template-columns: 1fr; padding-bottom: calc(var(--e5) + 4.5rem); }
   .pie-lema { justify-self: start; }
 
-  .wa-flot { left: 16px; bottom: 16px; width: 52px; height: 52px; }
+  .wa-flot { right: 16px; bottom: 16px; width: 52px; height: 52px; }
   .wa-flot svg { width: 26px; height: 26px; }
 }
 
