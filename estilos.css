@@ -427,17 +427,12 @@ p { margin: 0; text-wrap: pretty; }
 /* ── WhatsApp flotante (abajo a la izquierda) ───── */
 .wa-flot {
   position: fixed; left: 24px; bottom: 24px; z-index: 40;
-  display: flex; align-items: center; gap: .65rem;
-  padding: .4rem 1.1rem .4rem .4rem; border-radius: 999px;
-  background: var(--tinta); border: 1px solid rgba(247, 219, 134, .45); color: #fff;
-  font: 600 .95rem/1 var(--sans); text-decoration: none;
-  transition: border-color .2s, transform .25s, opacity .3s, visibility .3s;
+  display: grid; place-items: center; width: 60px; height: 60px; border-radius: 50%;
+  background: #25d366; color: #fff; box-shadow: 0 10px 30px rgba(0, 0, 0, .28);
+  transition: transform .2s;
 }
-/* sobre la portada ya está el WhatsApp del header: el flotante aparece después */
-.wa-flot.oculto { opacity: 0; visibility: hidden; transform: translateY(8px); }
-.wa-flot:hover { border-color: var(--oro-claro); transform: translateY(-2px); }
-.wa-flot-ico { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #25d366; color: #fff; }
-.wa-flot-ico svg { width: 22px; height: 22px; }
+.wa-flot:hover { transform: scale(1.08); }
+.wa-flot svg { width: 30px; height: 30px; }
 
 /* ── Movimiento: estados iniciales solo si GSAP está activo ── */
 .anim [data-txt], .anim [data-stagger] > * { opacity: 0; }
@@ -538,7 +533,8 @@ p { margin: 0; text-wrap: pretty; }
   .pie { grid-template-columns: 1fr; padding-bottom: calc(var(--e5) + 4.5rem); }
   .pie-lema { justify-self: start; }
 
-  .wa-flot { left: 16px; bottom: 16px; padding: .35rem 1rem .35rem .35rem; }
+  .wa-flot { left: 16px; bottom: 16px; width: 52px; height: 52px; }
+  .wa-flot svg { width: 26px; height: 26px; }
 }
 
 @media (max-width: 360px) {

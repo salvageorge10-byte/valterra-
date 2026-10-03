@@ -4,11 +4,7 @@ const WA = 'https://wa.me/5491140676706?text=';
 
 // ── Header: sólido y más bajo después de la portada ──
 const cab = document.getElementById('cab');
-const waFlot = document.querySelector('.wa-flot');
-const alScrollear = () => {
-  cab.classList.toggle('solido', scrollY > 40);
-  waFlot.classList.toggle('oculto', scrollY < innerHeight * .7);
-};
+const alScrollear = () => cab.classList.toggle('solido', scrollY > 40);
 addEventListener('scroll', alScrollear, { passive: true });
 alScrollear();
 
