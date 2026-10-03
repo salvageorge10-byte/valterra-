@@ -197,34 +197,46 @@ p { margin: 0; text-wrap: pretty; }
 .busca-nota { grid-column: 1 / -1; margin-top: var(--e3); font-size: .88rem; color: var(--texto-2); }
 
 /* ══ 3. PROPIEDADES ═════════════════════════════════ */
-.props { padding: var(--seccion) 0 0; }
+.props { padding: clamp(4rem, 7vw, 6.5rem) 0 0; }
 .props-cab { max-width: var(--ancho); margin: 0 auto; padding: var(--e5) var(--margen) 0; }
 .props-tit { font-size: clamp(2.1rem, 4.4vw, 3.9rem); line-height: 1.06; color: var(--azul); max-width: 20ch; }
 .props-grid {
-  max-width: var(--ancho); margin: var(--e6) auto 0; padding: 0 var(--margen);
-  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--e5); row-gap: var(--e7);
-  align-items: end;
+  max-width: var(--ancho); margin: var(--e5) auto 0; padding: 0 var(--margen);
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--e6) var(--e4);
+  align-items: start;
 }
 .prop { margin: 0; min-width: 0; }
-.prop-foto { display: block; overflow: hidden; background: #d9d3c6; }
+.prop-foto { display: block; overflow: hidden; background: #d9d3c6; aspect-ratio: 4 / 5; }
 .prop-foto img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2, .7, .2, 1); }
 .prop-foto:hover img { transform: scale(1.04); }
+.prop-e .prop-foto img { object-position: 30% 50%; }
+/* fila de cuatro: títulos de dos líneas para que las tablas queden alineadas */
+.prop:not(.prop-a) .ficha-nom { min-height: 2.3em; }
+.prop:not(.prop-a) .ficha-datos > div { padding-inline: .7rem; }
+.prop:not(.prop-a) .ficha-datos > div:first-child { padding-left: 0; }
+.prop:not(.prop-a) .ficha-datos dt { letter-spacing: .08em; }
+.prop:not(.prop-a) .ficha-pie { flex-direction: column; align-items: flex-start; gap: .5rem; }
 
-/* destacada: foto grande y ficha al costado, apoyada abajo */
-.prop-a { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--e5); align-items: end; }
-.prop-a .prop-foto { grid-column: 1 / 9; aspect-ratio: 4 / 3; }
-.prop-a .ficha { grid-column: 9 / 13; margin-top: 0; }
-.prop-a .ficha-nom { font-size: clamp(1.8rem, 2.6vw, 2.4rem); }
-.prop-a .ficha-precio { font-size: clamp(1.7rem, 2.3vw, 2.1rem); }
-/* filas de a dos, con proporciones cruzadas */
-.prop-b { grid-column: 1 / 6; }
-.prop-b .prop-foto { aspect-ratio: 4 / 5; }
-.prop-d { grid-column: 7 / 13; }
-.prop-d .prop-foto { aspect-ratio: 4 / 3; }
-.prop-e { grid-column: 1 / 8; }
-.prop-e .prop-foto { aspect-ratio: 3 / 2; }
-.prop-c { grid-column: 9 / 13; }
-.prop-c .prop-foto { aspect-ratio: 3 / 4; }
+/* destacada: foto grande + panel azul de la misma altura */
+.prop-a {
+  grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr);
+  background: var(--azul); color: #fff;
+}
+.prop-a .prop-foto { aspect-ratio: 3 / 2; }
+.prop-a .ficha {
+  margin: 0; padding: clamp(2rem, 3.4vw, 3.25rem);
+  display: flex; flex-direction: column;
+}
+.prop-a .ficha-op { color: var(--oro); }
+.prop-a .ficha-nom { font-size: clamp(1.9rem, 2.8vw, 2.6rem); color: #fff; margin-top: var(--e2); }
+.prop-a .ficha-lugar { color: var(--claro-2); }
+.prop-a .ficha-datos { margin-top: auto; border-color: var(--linea-osc); }
+.prop-a .ficha-datos > div { border-color: var(--linea-osc); }
+.prop-a .ficha-datos dt { color: var(--claro-2); }
+.prop-a .ficha-datos dd, .prop-a .ficha-precio { color: #fff; }
+.prop-a .ficha-precio { font-size: clamp(1.8rem, 2.4vw, 2.2rem); color: var(--oro-claro); }
+.prop-a .ficha-cta { color: #fff; border-color: var(--oro); }
+.prop-a .ficha-cta:hover { color: var(--oro-claro); }
 
 .ficha { margin-top: var(--e3); }
 .ficha-op { font-size: .7rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--oro-osc); }
@@ -247,7 +259,7 @@ p { margin: 0; text-wrap: pretty; }
 }
 .ficha-cta::after { content: " →"; }
 .ficha-cta:hover { color: var(--oro-osc); }
-.props-nota { max-width: var(--ancho); margin: var(--e7) auto 0; padding: 0 var(--margen); font-size: .9rem; color: var(--texto-2); }
+.props-nota { max-width: var(--ancho); margin: var(--e5) auto 0; padding: 0 var(--margen); font-size: .9rem; color: var(--texto-2); }
 .props-nota a { color: var(--azul); font-weight: 600; text-underline-offset: 3px; }
 
 /* ══ 4. VALTERRA ════════════════════════════════════ */
@@ -478,10 +490,9 @@ p { margin: 0; text-wrap: pretty; }
   .recorrido-in { grid-template-columns: 1fr; gap: var(--e6); }
   .recorrido-cab { position: static; }
   .prota-ficha { grid-template-columns: 1fr; }
-  .prop-a .prop-foto, .prop-a .ficha { grid-column: 1 / -1; }
-  .prop-a .ficha { margin-top: var(--e3); max-width: 34rem; }
-  .prop-b, .prop-e { grid-column: 1 / 7; }
-  .prop-d, .prop-c { grid-column: 7 / 13; }
+  .props-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .prop-a { grid-template-columns: 1fr; }
+  .prop-a .ficha-datos { margin-top: var(--e4); }
   .prota-cta { grid-column: 1; }
 }
 
@@ -501,12 +512,14 @@ p { margin: 0; text-wrap: pretty; }
   .busca-tit { margin-bottom: var(--e2); }
   .busca-btn { width: 100%; padding: 1.2rem; }
 
-  .props-grid, .zonas-grid { display: flex; flex-direction: column; row-gap: var(--e6); margin-top: var(--e6); }
+  .props-grid { display: flex; flex-direction: column; row-gap: var(--e5); margin-top: var(--e5); }
+  .zonas-grid { display: flex; flex-direction: column; row-gap: var(--e6); margin-top: var(--e6); }
   .prop, .zona { width: 100%; margin-top: 0 !important; }
-  .prop-a { display: block; }
-  .prop-a .prop-foto, .prop .prop-foto { aspect-ratio: 4 / 3; margin-inline: calc(-1 * var(--margen)); width: calc(100% + 2 * var(--margen)); }
-  .prop-b .prop-foto, .prop-c .prop-foto { aspect-ratio: 4 / 5; }
-  .prop-a .ficha { margin-top: var(--e3); }
+  .prop-a { margin-inline: calc(-1 * var(--margen)); width: calc(100% + 2 * var(--margen)); }
+  .prop-a .ficha { padding: var(--e5) var(--margen); }
+  .prop .prop-foto { aspect-ratio: 4 / 3; }
+  .prop:not(.prop-a) .ficha-nom { min-height: 0; }
+  .prop:not(.prop-a) .ficha-pie { flex-direction: row; align-items: baseline; }
   .ficha-datos > div { padding-inline: .7rem; }
   .props-nota { margin-top: var(--e6); }
 
