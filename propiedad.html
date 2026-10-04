@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Propiedad · Valterra Real Estate</title>
+  <meta name="description" content="Ficha de la propiedad: fotos, datos, descripción y consulta por WhatsApp. Valterra Real Estate, CABA y Gran Buenos Aires.">
+  <meta name="theme-color" content="#071a33">
+  <link rel="icon" href="img/monograma-v.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body id="top" class="pag-prop">
+
+<!-- HEADER: en las páginas internas siempre sólido -->
+<header class="cab solido" id="cab" data-solido>
+  <nav class="cab-nav cab-nav-izq" aria-label="Secciones">
+    <a href="index.html#propiedades">Propiedades</a>
+    <a href="index.html#como-vendemos">Cómo vendemos</a>
+    <a href="index.html#zonas">Zonas</a>
+  </nav>
+
+  <a class="cab-marca" href="index.html#top" aria-label="Valterra Real Estate, inicio">
+    <img src="img/monograma-v.webp" alt="" width="72" height="54">
+    <span class="cab-nombre">Valterra</span>
+    <span class="cab-sub">Real Estate</span>
+  </a>
+
+  <div class="cab-der">
+    <nav class="cab-nav" aria-label="Más secciones">
+      <a href="index.html#inversiones">Inversiones</a>
+      <a href="index.html#contacto">Tasaciones</a>
+    </nav>
+    <button class="cab-menu" type="button" aria-expanded="false" aria-controls="menu-mob">
+      <span class="cab-menu-txt">Menú</span>
+      <span class="cab-menu-ico" aria-hidden="true"><i></i><i></i></span>
+    </button>
+    <a class="cab-wa" href="https://wa.me/5491140676706" target="_blank" rel="noopener" aria-label="WhatsApp 11 4067-6706">
+      <svg class="cab-wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.27.49 1.7.63.71.23 1.36.2 1.88.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.97 1-3.62-.24-.37a9.78 9.78 0 0 1-1.5-5.22c0-5.41 4.41-9.81 9.84-9.81a9.8 9.8 0 0 1 9.82 9.83c0 5.41-4.41 9.8-9.83 9.8zm8.36-18.16A11.75 11.75 0 0 0 12.04.2C5.5.2.2 5.5.2 12.02c0 2.09.55 4.12 1.58 5.92L.1 24l6.2-1.63a11.8 11.8 0 0 0 5.73 1.46h.01c6.53 0 11.84-5.3 11.84-11.82 0-3.16-1.23-6.13-3.48-8.37z"/></svg>
+      <span class="cab-wa-txt"><span class="cab-wa-et">WhatsApp</span><span class="cab-wa-num">11 4067-6706</span></span>
+    </a>
+  </div>
+</header>
+
+<!-- Menú de celular: pantalla completa -->
+<div class="menu-mob" id="menu-mob" hidden>
+  <nav aria-label="Menú">
+    <a href="index.html#propiedades">Propiedades</a>
+    <a href="index.html#valterra">Valterra</a>
+    <a href="index.html#como-vendemos">Cómo vendemos</a>
+    <a href="index.html#zonas">Zonas</a>
+    <a href="index.html#inversiones">Inversiones</a>
+    <a href="index.html#contacto">Tasaciones y contacto</a>
+  </nav>
+  <div class="menu-mob-pie">
+    <a href="https://wa.me/5491140676706" target="_blank" rel="noopener">WhatsApp · 11 4067-6706</a>
+    <a href="https://www.instagram.com/valterra.realestate/" target="_blank" rel="noopener">Instagram · @valterra.realestate</a>
+  </div>
+</div>
+
+<main class="pp" id="pp">
+
+  <nav class="pp-migas" aria-label="Estás en">
+    <a href="index.html#propiedades">Propiedades</a>
+    <span aria-hidden="true">/</span>
+    <span id="pp-miga">Ficha</span>
+  </nav>
+
+  <!-- título y precio -->
+  <header class="pp-cab">
+    <div class="pp-titulo">
+      <p class="pp-op" id="pp-op"></p>
+      <h1 class="pp-nom" id="pp-nom">Propiedad</h1>
+      <p class="pp-lugar" id="pp-lugar"></p>
+    </div>
+    <div class="pp-valor">
+      <p class="pp-precio" id="pp-precio"></p>
+      <a class="pp-boton" id="pp-wa" href="https://wa.me/5491140676706" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+    </div>
+  </header>
+
+  <!-- mosaico: foto principal + cuatro chicas; en celular es un carrusel -->
+  <div class="pp-mosaico" id="pp-mosaico"></div>
+  <p class="pp-mosaico-pie"><span id="pp-cuenta"></span> <a href="#fotos">Ver todas las fotos</a></p>
+
+  <!-- datos, descripción y contacto -->
+  <div class="pp-cuerpo">
+    <div class="pp-detalle">
+      <dl class="pp-datos" id="pp-datos"></dl>
+
+      <h2 class="pp-sub">La propiedad</h2>
+      <p class="pp-desc" id="pp-desc"></p>
+
+      <h2 class="pp-sub">Características</h2>
+      <ul class="pp-carac" id="pp-carac"></ul>
+    </div>
+
+    <aside class="pp-contacto" aria-labelledby="pp-contacto-tit">
+      <h2 class="pp-contacto-tit" id="pp-contacto-tit">¿Te interesa esta propiedad?</h2>
+      <p>Escribinos y te respondemos con más información, planos y disponibilidad para visitarla.</p>
+      <a class="pp-boton pp-boton-oro" id="pp-wa2" href="https://wa.me/5491140676706" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+      <a class="enlace enlace-oro" id="pp-visita" href="https://wa.me/5491140676706" target="_blank" rel="noopener">Coordinar una visita</a>
+      <p class="pp-contacto-tel">WhatsApp <a href="https://wa.me/5491140676706" target="_blank" rel="noopener">11 4067-6706</a></p>
+    </aside>
+  </div>
+
+  <!-- todas las fotos, grandes y rotuladas -->
+  <section class="pp-fotos" id="fotos" aria-labelledby="fotos-tit">
+    <div class="folio">
+      <h2 class="folio-tit" id="fotos-tit">Fotos</h2>
+      <p class="folio-nota">Los interiores son fotos de referencia</p>
+    </div>
+    <div class="pp-fotos-lista" id="pp-fotos"></div>
+  </section>
+
+  <p class="pp-nota">Ficha de muestra. La fachada es del barrio y los interiores son fotos de referencia de otros inmuebles, no de esta propiedad. Precio calculado con el valor de mercado del metro cuadrado de la zona, octubre de 2026.</p>
+
+  <!-- otras propiedades -->
+  <section class="pp-otras" aria-labelledby="otras-tit">
+    <div class="folio">
+      <h2 class="folio-tit" id="otras-tit">Otras propiedades</h2>
+      <a class="folio-nota" href="index.html#propiedades">Volver al listado</a>
+    </div>
+    <div class="pp-otras-lista" id="pp-otras"></div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="pie-marca">
+    <img src="img/monograma-v.webp" alt="" width="40" height="30">
+    <p><span class="pie-nombre">Valterra Real Estate</span> Inmobiliaria · CABA y Gran Buenos Aires</p>
+  </div>
+  <p class="pie-lema">Donde el valor encuentra su lugar.</p>
+  <details class="creditos">
+    <summary>Créditos de las fotos</summary>
+    <ul>
+      <li>Avenida Alvear, Recoleta (portada) — Gobierno de la Ciudad de Buenos Aires, <a href="https://commons.wikimedia.org/wiki/File:Avenida_Alvear,_Recoleta.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY 2.5 AR.</li>
+      <li>Edificio de Guido y Luis Agote, Recoleta — Gelpgim22 (Sergio Panei Pirau), <a href="https://commons.wikimedia.org/wiki/File:Edificio_de_Guido_y_Luis_Agote,_Recoleta,_Buenos_Aires_II.JPG" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 3.0.</li>
+      <li>Casas en Belgrano R — Alv Erteynsteyn, <a href="https://commons.wikimedia.org/wiki/File:Casa_en_Belgrano_R-1.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> y <a href="https://commons.wikimedia.org/wiki/File:Casa_en_Belgrano_R-2.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
+      <li>Calle Callao — Anastasiya Lvova, <a href="https://commons.wikimedia.org/wiki/File:Callao_street,_BA_11.JPG" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY 3.0.</li>
+      <li>Ribera Nordelta — Grupo Monarca, <a href="https://commons.wikimedia.org/wiki/File:Ribera_Nordelta.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
+      <li>Casa de Palermo Chico — Gelpgim22 (Sergio Panei Pitrau), <a href="https://commons.wikimedia.org/wiki/File:Casa_de_Palermo_Chico_IV.JPG" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY 3.0.</li>
+      <li>Avenida Alvear (zona Recoleta) — Barc, <a href="https://commons.wikimedia.org/wiki/File:Buenos_Aires_-_Avenida_Alvear_-_20090104-o.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 3.0.</li>
+      <li>El Salvador y Armenia, Palermo — Roberto Fiadone, <a href="https://commons.wikimedia.org/wiki/File:Enredadera_Palermo_Buenos_Aires_02.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
+      <li>Sucre y Superí, Belgrano — Roberto Fiadone, <a href="https://commons.wikimedia.org/wiki/File:Enredadera_Belgrano_Buenos_Aires.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
+      <li>Escaleras de Arias al 1900, Núñez — Roberto Fiadone, <a href="https://commons.wikimedia.org/wiki/File:Escaleras_N%C3%BA%C3%B1ez_Buenos_Aires_02.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
+      <li>Edificios de Puerto Madero — Banfield, <a href="https://commons.wikimedia.org/wiki/File:Puerto_Madero_Edificios.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY 3.0.</li>
+      <li>Casa frente a la Catedral, San Isidro — Fernando Martello, <a href="https://commons.wikimedia.org/wiki/File:Casa_frente_a_catedral_sanisidro_01.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
+      <li>El centro desde el Palacio Barolo — Leo.silvero94, <a href="https://commons.wikimedia.org/wiki/File:Buenos_Aires_panor%C3%A1mica.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
+      <li>Madero Center, Puerto Madero — Cambalachero, <a href="https://commons.wikimedia.org/wiki/File:Madero_Center.JPG" target="_blank" rel="noopener">Wikimedia Commons</a>, CC0.</li>
+      <li>Edificio en construcción, Florencio Varela — Gelpgim22 (Sergio Moises Panei Pitrau), <a href="https://commons.wikimedia.org/wiki/File:Edificio_en_construcci%C3%B3n,_Varela_III.JPG" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
+      <li>Campo en la provincia de Buenos Aires — lrargerich, <a href="https://commons.wikimedia.org/wiki/File:Las_Pampas.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY 2.0.</li>
+      <li>Fotos de las fichas ampliadas:
+        <ul>
+        <li>Piso de época en Recoleta, otra vista del edificio — Gelpgim22 (Sergio Panei Pirau), <a href="https://commons.wikimedia.org/wiki/File:Edificio_de_Guido_y_Luis_Agote,_Recoleta,_Buenos_Aires.JPG" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 3.0.</li>
+        <li>Piso de época en Recoleta, living de referencia — Tschäff, <a href="https://www.flickr.com/photos/90844690@N00/2131559902" target="_blank" rel="noopener">Flickr</a>, CC BY-SA 2.0.</li>
+        <li>Piso de época en Recoleta, comedor de referencia — Tschäff, <a href="https://www.flickr.com/photos/90844690@N00/2131559778" target="_blank" rel="noopener">Flickr</a>, CC BY-SA 2.0.</li>
+        <li>Piso de época en Recoleta, dormitorio de referencia — wwarby, <a href="https://www.flickr.com/photos/26782864@N00/5817610153" target="_blank" rel="noopener">Flickr</a>, CC BY 2.0.</li>
+        <li>Casa en Belgrano R, living de referencia — Kendyl Young, <a href="https://www.flickr.com/photos/13729869@N04/14372931476" target="_blank" rel="noopener">Flickr</a>, CC BY 2.0.</li>
+        <li>Casa en Belgrano R, sala de referencia — Kendyl Young, <a href="https://www.flickr.com/photos/13729869@N04/7238722798" target="_blank" rel="noopener">Flickr</a>, CC BY 2.0.</li>
+        <li>Casa en Belgrano R, comedor de referencia — lisa.williams, <a href="https://www.flickr.com/photos/57551232@N00/882032620" target="_blank" rel="noopener">Flickr</a>, CC BY 2.0.</li>
+        <li>Casa en Belgrano R, cocina y galería de referencia — Arielvito, <a href="https://commons.wikimedia.org/wiki/File:Litle_oasis_II.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
+        <li>Departamento en Nordelta, edificio con pileta (Loft del Sendero) — Grupo Monarca, <a href="https://commons.wikimedia.org/wiki/File:Loft_del_Sendero.JPG" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
+        <li>Departamento en Nordelta, parque del barrio Sendero — Grupo Monarca, <a href="https://commons.wikimedia.org/wiki/File:Casas_del_Sendero.JPG" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
+        <li>Departamento en Nordelta, living de referencia — Sugar Beach Residences, <a href="https://www.flickr.com/photos/68050504@N05/18436450223" target="_blank" rel="noopener">Flickr</a>, CC BY 2.0.</li>
+        <li>Departamento en Nordelta, comedor de referencia — Sugar Beach Residences, <a href="https://www.flickr.com/photos/68050504@N05/18436448783" target="_blank" rel="noopener">Flickr</a>, CC BY 2.0.</li>
+        <li>Casona en Belgrano R, patio con pileta de referencia — Mark Surman, <a href="https://www.flickr.com/photos/23015607@N00/3456103833" target="_blank" rel="noopener">Flickr</a>, CC BY 2.0.</li>
+        <li>Casona en Belgrano R, pasillo de referencia — Mark Surman, <a href="https://www.flickr.com/photos/23015607@N00/3455841755" target="_blank" rel="noopener">Flickr</a>, CC BY 2.0.</li>
+        <li>Casona en Belgrano R, living de referencia — Oyvind Solstad, <a href="https://www.flickr.com/photos/32962935@N00/2302105132" target="_blank" rel="noopener">Flickr</a>, CC BY 2.0.</li>
+        <li>Casona en Belgrano R, ventanal de referencia — Ariwerber, <a href="https://commons.wikimedia.org/wiki/File:Olazabal_belleza_2.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0.</li>
+        <li>Piso en Barrio Norte, living de referencia — danxoneil, <a href="https://www.flickr.com/photos/36521980095@N01/20142051571" target="_blank" rel="noopener">Flickr</a>, CC BY 2.0.</li>
+        <li>Piso en Barrio Norte, living y cocina de referencia — aforero, <a href="https://www.flickr.com/photos/88824995@N00/2107624813" target="_blank" rel="noopener">Flickr</a>, CC BY 2.0.</li>
+        <li>Piso en Barrio Norte, dormitorio de referencia — travelwayoflife, <a href="https://www.flickr.com/photos/61664791@N05/6083943057" target="_blank" rel="noopener">Flickr</a>, CC BY-SA 2.0.</li>
+        <li>Piso en Barrio Norte, segundo dormitorio de referencia — blmurch, <a href="https://www.flickr.com/photos/82439748@N00/327557526" target="_blank" rel="noopener">Flickr</a>, CC BY 2.0.</li>
+        </ul>
+      </li>
+    </ul>
+    <p>Las propiedades y sus precios son fichas de muestra. Las fotos muestran fachadas y barrios reales que no están a la venta; los interiores de las fichas son fotos de referencia de otros inmuebles. Recortes y compresión propios.</p>
+  </details>
+</footer>
+
+<a class="wa-flot" href="https://wa.me/5491140676706?text=Hola%20Valterra%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp al 11 4067-6706">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.27.49 1.7.63.71.23 1.36.2 1.88.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.97 1-3.62-.24-.37a9.78 9.78 0 0 1-1.5-5.22c0-5.41 4.41-9.81 9.84-9.81a9.8 9.8 0 0 1 9.82 9.83c0 5.41-4.41 9.8-9.83 9.8zm8.36-18.16A11.75 11.75 0 0 0 12.04.2C5.5.2.2 5.5.2 12.02c0 2.09.55 4.12 1.58 5.92L.1 24l6.2-1.63a11.8 11.8 0 0 0 5.73 1.46h.01c6.53 0 11.84-5.3 11.84-11.82 0-3.16-1.23-6.13-3.48-8.37z"/></svg>
+</a>
+
+<script src="fichas.js" defer></script>
+<script src="valterra.js" defer></script>
+<script src="propiedad.js" defer></script>
+</body>
+</html>
