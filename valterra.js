@@ -123,7 +123,6 @@ const mostrarFoto = (i) => {
   fotoActual = Math.max(0, Math.min(f.length - 1, i));
   $('ver-i').textContent = fotoActual + 1;
   $('ver-que').textContent = f[fotoActual][1];
-  $('ver-cred').textContent = 'Foto: ' + f[fotoActual][2];
   minis.querySelectorAll('button').forEach((b, j) => b.setAttribute('aria-current', String(j === fotoActual)));
   ver.querySelector('.ver-ant').disabled = fotoActual === 0;
   ver.querySelector('.ver-sig').disabled = fotoActual === f.length - 1;

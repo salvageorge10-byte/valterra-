@@ -309,7 +309,6 @@ p { margin: 0; text-wrap: pretty; }
   background: rgba(2, 14, 35, .7); font-size: .78rem; font-weight: 600; letter-spacing: .12em; font-variant-numeric: tabular-nums;
 }
 .ver-leyenda { padding: .85rem var(--e3) 0; font-size: .9rem; color: #fff; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .25rem var(--e3); }
-.ver-credito { font-size: .75rem; color: var(--claro-2); }
 .ver-minis { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .5rem; padding: .85rem var(--e3) var(--e3); }
 .ver-minis button { padding: 0; border: 0; background: none; cursor: pointer; aspect-ratio: 3 / 2; overflow: hidden; opacity: .5; outline-offset: 2px; transition: opacity .2s; }
 .ver-minis button:hover { opacity: .85; }
