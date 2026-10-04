@@ -166,6 +166,13 @@ document.querySelectorAll('[data-ficha]').forEach((el) => el.addEventListener('c
   quienAbrio = el;
   abrirFicha(el.dataset.ficha);
 }));
+// en las tarjetas chicas, tocar cualquier parte abre la ficha
+document.querySelectorAll('.prop:not(.prop-a)').forEach((card) => card.addEventListener('click', (e) => {
+  if (e.target.closest('a, button')) return;
+  const boton = card.querySelector('.ficha-ver');
+  quienAbrio = boton;
+  abrirFicha(boton.dataset.ficha);
+}));
 ver.querySelector('.ver-cerrar').addEventListener('click', () => ver.close());
 ver.addEventListener('click', (e) => { if (e.target === ver) ver.close(); });   // clic en el fondo
 ver.addEventListener('close', () => {

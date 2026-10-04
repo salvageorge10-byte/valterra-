@@ -203,26 +203,25 @@ p { margin: 0; text-wrap: pretty; }
 .props-grid {
   max-width: var(--ancho); margin: var(--e5) auto 0; padding: 0 var(--margen);
   display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--e6) var(--e4);
-  align-items: start;
 }
-.prop { margin: 0; min-width: 0; }
+.prop { margin: 0; min-width: 0; display: flex; flex-direction: column; }
 .prop-foto { display: block; overflow: hidden; background: #d9d3c6; aspect-ratio: 4 / 5; }
 .prop-foto img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2, .7, .2, 1); }
-.prop-foto:hover img { transform: scale(1.04); }
+.prop:hover .prop-foto img { transform: scale(1.04); }
 .prop-e .prop-foto img { object-position: 30% 50%; }
-/* fila de cuatro: títulos de dos líneas para que las tablas queden alineadas */
-.prop:not(.prop-a) .ficha-nom { min-height: 2.3em; }
-.prop:not(.prop-a) .ficha-datos > div { padding-inline: .7rem; }
-.prop:not(.prop-a) .ficha-datos > div:first-child { padding-left: 0; }
-.prop:not(.prop-a) .ficha-datos dt { letter-spacing: .08em; }
-.prop:not(.prop-a) .ficha-pie { flex-direction: column; align-items: flex-start; gap: .5rem; }
+
+/* tarjetas chicas: toda la tarjeta abre la ficha; el precio queda siempre abajo */
+.prop:not(.prop-a) { cursor: pointer; }
+.prop:not(.prop-a) .ficha { flex: 1; display: flex; flex-direction: column; margin-top: 1.35rem; }
+.prop:not(.prop-a):hover .ficha-nom { color: var(--oro-osc); }
 
 /* destacada: foto grande + panel azul de la misma altura */
 .prop-a {
   grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr);
   background: var(--azul); color: #fff;
 }
-.prop-a .prop-foto { aspect-ratio: 3 / 2; }
+.prop-a .prop-foto { aspect-ratio: auto; min-height: 480px; }
+.prop-a .prop-foto img { position: absolute; inset: 0; }
 .prop-a .ficha {
   margin: 0; padding: clamp(2rem, 3.4vw, 3.25rem);
   display: flex; flex-direction: column;
@@ -230,28 +229,34 @@ p { margin: 0; text-wrap: pretty; }
 .prop-a .ficha-op { color: var(--oro); }
 .prop-a .ficha-nom { font-size: clamp(1.9rem, 2.8vw, 2.6rem); color: #fff; margin-top: var(--e2); }
 .prop-a .ficha-lugar { color: var(--claro-2); }
-.prop-a .ficha-datos { margin-top: auto; border-color: var(--linea-osc); }
-.prop-a .ficha-datos > div { border-color: var(--linea-osc); }
-.prop-a .ficha-datos dt { color: var(--claro-2); }
-.prop-a .ficha-datos dd, .prop-a .ficha-precio { color: #fff; }
-.prop-a .ficha-precio { font-size: clamp(1.8rem, 2.4vw, 2.2rem); color: var(--oro-claro); }
+.prop-a .ficha-datos { margin-top: auto; padding-top: var(--e4); display: flex; gap: clamp(1.5rem, 2.6vw, 2.5rem); }
+.prop-a .ficha-datos dd { order: -1; margin: 0; font-family: var(--serif); font-size: clamp(1.6rem, 2vw, 1.9rem); line-height: 1; color: #fff; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.prop-a .ficha-datos div { display: flex; flex-direction: column; gap: .45rem; }
+.prop-a .ficha-datos dt { font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--claro-2); }
+.prop-a .ficha-pie { margin-top: var(--e4); padding-top: var(--e3); border-top: 1px solid var(--linea-osc); display: block; }
+.prop-a .ficha-precio { font-size: clamp(2rem, 2.6vw, 2.4rem); color: var(--oro-claro); }
+.prop-a .ficha-acc { margin-top: var(--e3); display: flex; align-items: center; gap: var(--e2) var(--e4); flex-wrap: wrap; }
+.ficha-ver.ficha-ver-boton {
+  font: 600 .78rem/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; cursor: pointer;
+  padding: 1rem 1.4rem; background: var(--oro-claro); color: var(--azul); border: 0; transition: background .2s;
+}
+.ficha-ver.ficha-ver-boton:hover { background: #fff; color: var(--azul); }
 .prop-a .ficha-cta { color: #fff; border-color: var(--oro); }
 .prop-a .ficha-cta:hover { color: var(--oro-claro); }
 
 .ficha { margin-top: var(--e3); }
-.ficha-op { font-size: .7rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--oro-osc); }
-.ficha-nom { margin-top: .6rem; font-size: clamp(1.4rem, 1.9vw, 1.75rem); line-height: 1.15; color: var(--azul); }
-.ficha-lugar { margin-top: .35rem; font-size: .95rem; color: var(--texto-2); }
-.ficha-datos {
-  margin: var(--e3) 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea);
+.ficha-op { font-size: .68rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--oro-osc); }
+.ficha-nom { margin-top: .5rem; font-size: clamp(1.4rem, 1.8vw, 1.65rem); line-height: 1.15; color: var(--azul); transition: color .25s; }
+.ficha-lugar { margin-top: .3rem; font-size: .95rem; color: var(--texto-2); }
+.ficha-linea { margin-top: var(--e2); font-size: .95rem; color: var(--texto); font-variant-numeric: tabular-nums; }
+.ficha-linea span { margin: 0 .3rem; color: var(--oro-osc); }
+.ficha-pie {
+  margin-top: auto; padding-top: var(--e3);
+  display: flex; align-items: baseline; justify-content: space-between; gap: .4rem var(--e2); flex-wrap: wrap;
 }
-.ficha-datos > div { padding: .8rem .9rem .85rem; border-left: 1px solid var(--linea); min-width: 0; }
-.ficha-datos > div:first-child { padding-left: 0; border-left: 0; }
-.ficha-datos dt { font-size: .64rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--texto-2); }
-.ficha-datos dd { margin: .25rem 0 0; font-family: var(--serif); font-size: 1.15rem; color: var(--azul); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.ficha-pie { margin-top: var(--e3); display: flex; align-items: baseline; justify-content: space-between; gap: var(--e3); flex-wrap: wrap; }
-.ficha-precio { font-family: var(--serif); font-size: clamp(1.4rem, 1.8vw, 1.65rem); color: var(--azul); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.prop:not(.prop-a) .ficha-pie { border-top: 1px solid var(--linea); padding-top: 1rem; }
+.prop:not(.prop-a) .ficha-linea { margin-bottom: var(--e3); }
+.ficha-precio { font-family: var(--serif); font-size: clamp(1.35rem, 1.6vw, 1.5rem); color: var(--azul); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .ficha-precio small { font-family: var(--sans); font-size: .8rem; color: var(--texto-2); }
 .ficha-cta {
   font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--azul);
@@ -268,14 +273,13 @@ p { margin: 0; text-wrap: pretty; }
   position: absolute; left: .75rem; bottom: .75rem; padding: .3rem .6rem .32rem;
   background: rgba(2, 14, 35, .78); color: #fff; font-size: .68rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
 }
-.ficha-acc { display: flex; align-items: baseline; gap: var(--e3); flex-wrap: wrap; }
 .ficha-ver {
-  font: 600 .78rem/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--oro-osc);
-  background: none; border: 0; padding: .35rem 0; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px;
+  font: 600 .74rem/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--azul);
+  background: none; border: 0; padding: .3rem 0; cursor: pointer; white-space: nowrap; transition: color .2s;
 }
-.ficha-ver:hover { color: var(--azul); }
-.prop-a .ficha-ver { color: var(--oro-claro); }
-.prop-a .ficha-ver:hover { color: #fff; }
+.ficha-ver:not(.ficha-ver-boton)::after { content: "→"; display: inline-block; margin-left: .4em; transition: transform .3s; }
+.prop:hover .ficha-ver:not(.ficha-ver-boton) { color: var(--oro-osc); }
+.prop:hover .ficha-ver:not(.ficha-ver-boton)::after { transform: translateX(4px); }
 
 /* ══ FICHA AMPLIADA ═════════════════════════════════ */
 .ver {
@@ -606,6 +610,7 @@ p { margin: 0; text-wrap: pretty; }
   .prota-ficha { grid-template-columns: 1fr; }
   .props-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .prop-a { grid-template-columns: 1fr; }
+  .prop-a .prop-foto { aspect-ratio: 3 / 2; min-height: 0; }
   .prop-a .ficha-datos { margin-top: var(--e4); }
   .prota-cta { grid-column: 1; }
 }
@@ -632,9 +637,7 @@ p { margin: 0; text-wrap: pretty; }
   .prop-a { margin-inline: calc(-1 * var(--margen)); width: calc(100% + 2 * var(--margen)); }
   .prop-a .ficha { padding: var(--e5) var(--margen); }
   .prop .prop-foto { aspect-ratio: 4 / 3; }
-  .prop:not(.prop-a) .ficha-nom { min-height: 0; }
   .prop:not(.prop-a) .ficha-pie { flex-direction: row; align-items: baseline; }
-  .ficha-datos > div { padding-inline: .7rem; }
   .props-nota { margin-top: var(--e6); }
 
   .valterra-cab, .zonas-cab, .inv-cuerpo, .contacto-in { grid-template-columns: 1fr; gap: var(--e4); }
