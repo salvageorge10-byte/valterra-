@@ -262,6 +262,121 @@ p { margin: 0; text-wrap: pretty; }
 .props-nota { max-width: var(--ancho); margin: var(--e5) auto 0; padding: 0 var(--margen); font-size: .9rem; color: var(--texto-2); }
 .props-nota a { color: var(--azul); font-weight: 600; text-underline-offset: 3px; }
 
+/* cantidad de fotos y acceso a la ficha */
+.prop-foto { position: relative; }
+.prop-n {
+  position: absolute; left: .75rem; bottom: .75rem; padding: .3rem .6rem .32rem;
+  background: rgba(2, 14, 35, .78); color: #fff; font-size: .68rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+}
+.ficha-acc { display: flex; align-items: baseline; gap: var(--e3); flex-wrap: wrap; }
+.ficha-ver {
+  font: 600 .78rem/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--oro-osc);
+  background: none; border: 0; padding: .35rem 0; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px;
+}
+.ficha-ver:hover { color: var(--azul); }
+.prop-a .ficha-ver { color: var(--oro-claro); }
+.prop-a .ficha-ver:hover { color: #fff; }
+
+/* ══ FICHA AMPLIADA ═════════════════════════════════ */
+.ver {
+  width: min(1280px, calc(100vw - 2 * var(--margen))); height: min(820px, calc(100dvh - 3rem));
+  max-width: none; max-height: none; padding: 0; border: 0; background: var(--papel); color: var(--texto);
+  overflow: hidden;
+}
+.ver::backdrop { background: rgba(2, 14, 35, .86); }
+.ver-caja { position: relative; height: 100%; display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(320px, 1fr); }
+
+.ver-galeria { display: flex; flex-direction: column; min-height: 0; background: var(--tinta); color: #fff; }
+.ver-escena { position: relative; flex: 1; min-height: 0; }
+.ver-tira {
+  height: 100%; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain;
+}
+.ver-tira::-webkit-scrollbar { display: none; }
+.ver-tira:focus-visible { outline-offset: -4px; }
+.ver-foto { flex: 0 0 100%; margin: 0; scroll-snap-align: center; display: grid; place-items: center; }
+.ver-foto img { width: 100%; height: 100%; object-fit: contain; }
+.ver-flecha {
+  position: absolute; top: 50%; translate: 0 -50%; width: 48px; height: 48px; display: grid; place-items: center;
+  background: rgba(2, 14, 35, .6); color: #fff; border: 1px solid var(--linea-osc); cursor: pointer; transition: background .2s, opacity .2s;
+}
+.ver-flecha svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+.ver-flecha:hover { background: var(--azul); }
+.ver-flecha:disabled { opacity: 0; pointer-events: none; }
+.ver-ant { left: var(--e2); }
+.ver-sig { right: var(--e2); }
+.ver-cont {
+  position: absolute; left: var(--e2); top: var(--e2); padding: .3rem .6rem;
+  background: rgba(2, 14, 35, .7); font-size: .78rem; font-weight: 600; letter-spacing: .12em; font-variant-numeric: tabular-nums;
+}
+.ver-leyenda { padding: .85rem var(--e3) 0; font-size: .9rem; color: #fff; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .25rem var(--e3); }
+.ver-credito { font-size: .75rem; color: var(--claro-2); }
+.ver-minis { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .5rem; padding: .85rem var(--e3) var(--e3); }
+.ver-minis button { padding: 0; border: 0; background: none; cursor: pointer; aspect-ratio: 3 / 2; overflow: hidden; opacity: .5; outline-offset: 2px; transition: opacity .2s; }
+.ver-minis button:hover { opacity: .85; }
+.ver-minis button[aria-current="true"] { opacity: 1; box-shadow: 0 0 0 2px var(--oro); }
+.ver-minis img { width: 100%; height: 100%; object-fit: cover; }
+
+.ver-info { overflow-y: auto; padding: clamp(2rem, 3vw, 3rem) clamp(1.5rem, 2.6vw, 2.5rem) var(--e4); overscroll-behavior: contain; }
+.ver-nom { margin-top: var(--e2); font-size: clamp(1.75rem, 2.4vw, 2.3rem); line-height: 1.1; color: var(--azul); padding-right: 5rem; }
+.ver-lugar { margin-top: .4rem; color: var(--texto-2); }
+.ver-precio { margin-top: var(--e3); font-family: var(--serif); font-size: clamp(1.7rem, 2.2vw, 2rem); color: var(--azul); font-variant-numeric: tabular-nums; }
+.ver-precio small { font-family: var(--sans); font-size: .85rem; color: var(--texto-2); }
+.ver-datos { margin: var(--e3) 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--linea); }
+.ver-datos > div { padding: .75rem .8rem .8rem; border-bottom: 1px solid var(--linea); border-left: 1px solid var(--linea); min-width: 0; }
+.ver-datos > div:nth-child(3n + 1) { padding-left: 0; border-left: 0; }
+.ver-datos dt { font-size: .64rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--texto-2); }
+.ver-datos dd { margin: .25rem 0 0; font-family: var(--serif); font-size: 1.08rem; line-height: 1.25; color: var(--azul); }
+.ver-desc { margin-top: var(--e4); max-width: 60ch; }
+.ver-sub { margin-top: var(--e4); font-family: var(--sans); font-size: .72rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--oro-osc); }
+.ver-carac { margin: var(--e2) 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .55rem var(--e3); font-size: .95rem; }
+.ver-carac li { padding-left: 1rem; background: linear-gradient(var(--oro-osc), var(--oro-osc)) 0 .7em / .45rem 1px no-repeat; }
+.ver-acc { margin-top: var(--e4); display: flex; flex-wrap: wrap; align-items: center; gap: var(--e2) var(--e3); }
+.ver-wa {
+  display: inline-block; padding: .95rem 1.4rem; background: var(--azul); color: #fff; text-decoration: none;
+  font-size: .8rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; transition: background .2s;
+}
+.ver-wa:hover { background: var(--oro-osc); }
+.ver-visita { font-size: .8rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--azul); text-decoration: none; border-bottom: 1px solid var(--oro-osc); padding: .3rem 0; }
+.ver-visita:hover { color: var(--oro-osc); }
+.ver-nota { margin-top: var(--e4); padding-top: var(--e2); border-top: 1px solid var(--linea); font-size: .82rem; color: var(--texto-2); }
+
+.ver-cerrar {
+  position: absolute; top: var(--e2); right: var(--e2); z-index: 2; display: inline-flex; align-items: center; gap: .4rem;
+  padding: .5rem .7rem; background: var(--papel); color: var(--azul); border: 1px solid var(--linea); cursor: pointer;
+  font: 600 .72rem/1 var(--sans); letter-spacing: .14em; text-transform: uppercase;
+}
+.ver-cerrar svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.ver-cerrar:hover { border-color: var(--azul); }
+
+@media (max-width: 900px) {
+  /* en celular la ficha ocupa toda la pantalla y se lee de arriba abajo */
+  .ver { width: 100vw; height: 100dvh; }
+  .ver-caja { display: block; overflow-y: auto; overscroll-behavior: contain; }
+  .ver-escena { aspect-ratio: 4 / 3; flex: none; }
+  .ver-galeria { display: block; }
+  .ver-leyenda { padding: .7rem var(--margen) .9rem; }
+  .ver-minis { display: none; }
+  .ver-flecha { width: 40px; height: 40px; background: rgba(2, 14, 35, .5); }
+  .ver-ant { left: .5rem; } .ver-sig { right: .5rem; }
+  .ver-cont { left: .75rem; top: auto; bottom: .75rem; }
+  .ver-cerrar { position: fixed; top: .75rem; right: .75rem; }
+  .ver-info { overflow: visible; padding: var(--e4) var(--margen) 0; }
+  .ver-nom { padding-right: 0; }
+  .ver-acc {
+    position: sticky; bottom: 0; margin: var(--e4) calc(-1 * var(--margen)) 0; padding: .85rem var(--margen);
+    background: var(--papel); border-top: 1px solid var(--linea); justify-content: space-between;
+  }
+  .ver-nota { padding-bottom: var(--e4); }
+}
+@media (max-width: 480px) {
+  .ver-datos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ver-datos > div:nth-child(3n + 1) { padding-left: .8rem; border-left: 1px solid var(--linea); }
+  .ver-datos > div:nth-child(2n + 1) { padding-left: 0; border-left: 0; }
+  .ver-carac { grid-template-columns: 1fr; }
+  .ver-wa { flex: 1; text-align: center; }
+  .ver-largo { display: none; }
+}
+
 /* ══ 4. VALTERRA ════════════════════════════════════ */
 .valterra { padding: var(--seccion) 0; }
 .valterra-cab {
