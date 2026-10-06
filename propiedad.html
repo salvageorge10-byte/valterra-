@@ -68,7 +68,7 @@
     <span id="pp-miga">Ficha</span>
   </nav>
 
-  <!-- 1 y 2. foto principal muy grande, identificación y precio -->
+  <!-- 1 y 2. foto principal muy grande, identificación y consulta de valor -->
   <section class="pp-portada" aria-labelledby="pp-nom">
     <figure class="pp-principal">
       <button class="pp-principal-foto" type="button" id="pp-principal" data-i="0" aria-label="Ampliar la foto principal">
@@ -87,21 +87,35 @@
         <p class="pp-lugar" id="pp-lugar"></p>
       </div>
       <div class="pp-valor">
-        <p class="pp-valor-et" id="pp-valor-et">Precio</p>
-        <p class="pp-precio" id="pp-precio"></p>
-        <a class="pp-boton" id="pp-wa" href="https://wa.me/5491140676706" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        <p class="pp-valor-et">Valor y disponibilidad</p>
+        <p class="pp-valor-txt">Te pasamos el valor, los planos y los horarios para visitarla.</p>
+        <a class="pp-boton" id="pp-wa" href="https://wa.me/5491140676706" target="_blank" rel="noopener">Consultar valor</a>
       </div>
     </div>
   </section>
 
-  <!-- 3. características principales -->
-  <section class="pp-bloque" aria-labelledby="pp-carac-tit">
+  <!-- 3. características: franja con todas las cifras -->
+  <section class="pp-cifras" aria-labelledby="pp-carac-tit">
     <h2 class="pp-et" id="pp-carac-tit">Características</h2>
     <dl class="pp-datos" id="pp-datos"></dl>
   </section>
 
+  <!-- 4 y 5. descripción e información adicional, lado a lado -->
+  <div class="pp-dos">
+    <section class="pp-col-desc" aria-labelledby="pp-desc-tit">
+      <h2 class="pp-et" id="pp-desc-tit">Descripción</h2>
+      <div class="pp-desc" id="pp-desc"></div>
+    </section>
+    <section class="pp-col-info" aria-labelledby="pp-info-tit">
+      <h2 class="pp-et" id="pp-info-tit">Información adicional</h2>
+      <dl class="pp-ficha" id="pp-ficha"></dl>
+      <h3 class="pp-detalles-tit">Detalles</h3>
+      <ul class="pp-carac" id="pp-carac"></ul>
+    </section>
+  </div>
+
   <!-- galería: el resto de las fotos, grandes y rotuladas; abren el visor -->
-  <section class="pp-bloque pp-bloque-galeria" id="fotos" aria-labelledby="pp-gal-tit">
+  <section class="pp-galeria-sec" id="fotos" aria-labelledby="pp-gal-tit">
     <div class="pp-et-fila">
       <h2 class="pp-et" id="pp-gal-tit">Fotos</h2>
       <p class="pp-et-nota">Los interiores son fotos de referencia</p>
@@ -109,25 +123,7 @@
     <div class="pp-galeria" id="pp-galeria"></div>
   </section>
 
-  <!-- 4. descripción -->
-  <section class="pp-bloque" aria-labelledby="pp-desc-tit">
-    <h2 class="pp-et" id="pp-desc-tit">Descripción</h2>
-    <div class="pp-desc" id="pp-desc"></div>
-  </section>
-
-  <!-- 5. información adicional -->
-  <section class="pp-bloque" aria-labelledby="pp-info-tit">
-    <h2 class="pp-et" id="pp-info-tit">Información adicional</h2>
-    <div class="pp-info">
-      <dl class="pp-ficha" id="pp-ficha"></dl>
-      <div class="pp-detalles">
-        <h3 class="pp-detalles-tit">Detalles</h3>
-        <ul class="pp-carac" id="pp-carac"></ul>
-      </div>
-    </div>
-  </section>
-
-  <p class="pp-nota">Ficha de muestra. La fachada es del barrio y los interiores son fotos de referencia de otros inmuebles, no de esta propiedad. Precio calculado con el valor de mercado del metro cuadrado de la zona, octubre de 2026.</p>
+  <p class="pp-nota">Ficha de muestra. La fachada es del barrio y los interiores son fotos de referencia de otros inmuebles, no de esta propiedad.</p>
 
 </main>
 
@@ -220,7 +216,7 @@
         </ul>
       </li>
     </ul>
-    <p>Las propiedades y sus precios son fichas de muestra. Las fotos muestran fachadas y barrios reales que no están a la venta; los interiores de las fichas son fotos de referencia de otros inmuebles. Recortes y compresión propios.</p>
+    <p>Las propiedades son fichas de muestra. Las fotos muestran fachadas y barrios reales que no están a la venta; los interiores de las fichas son fotos de referencia de otros inmuebles. Recortes y compresión propios.</p>
   </details>
 </footer>
 

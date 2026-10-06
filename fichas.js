@@ -1,4 +1,5 @@
 // Valterra — datos de cada propiedad (fichas de muestra). Los usa propiedad.html.
+// precio: guardado pero no se muestra por ahora (pedido de Salvador, 5/10/2026)
 // fotos: [archivo, qué se ve, crédito, ancho, alto] · desc: un párrafo por elemento
 // Para cargar una propiedad real: cambiar textos, precio y fotos acá.
 

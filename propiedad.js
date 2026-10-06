@@ -9,9 +9,8 @@
   const fotos = p.fotos;
   const total = fotos.length;
   const [estado, tipo] = p.op.split(' · ');
-  const alquiler = estado === 'Alquiler';
   const vertical = ([, , , w, h]) => h > w;
-  const consulta = WA + encodeURIComponent(`Hola Valterra, me interesa ${p.msg}. ¿Me pasan más información?`);
+  const consulta = WA + encodeURIComponent(`Hola Valterra, me interesa ${p.msg}. ¿Me pasan el valor y más información?`);
 
   document.title = `${p.nom} · Valterra Real Estate`;
   document.querySelector('meta[name="description"]').content = `${p.op}. ${p.desc[0]}`;
@@ -24,9 +23,7 @@
   $('pp-lugar').textContent = p.lugar;
   $('pp-contacto-nom').textContent = p.msg;
 
-  // 2. precio
-  $('pp-valor-et').textContent = alquiler ? 'Alquiler mensual' : 'Precio de venta';
-  $('pp-precio').innerHTML = p.precio;
+  // 2. consulta de valor (los precios no se muestran por ahora)
   $('pp-wa').href = consulta;
   $('pp-wa2').href = consulta;
   $('pp-visita').href = WA + encodeURIComponent(`Hola Valterra, quiero coordinar una visita a ${p.msg}.`);
@@ -39,10 +36,8 @@
   $('pp-total').textContent = total;
   document.querySelector('.pp-portada').classList.toggle('es-vertical', vertical(fotos[0]));
 
-  // 3. características principales: las cuatro primeras; el resto va a información adicional
-  const principales = p.datos.slice(0, 4);
-  const resto = p.datos.slice(4);
-  $('pp-datos').innerHTML = principales.map(([t, v]) => `<div><dt>${t}</dt><dd>${v}</dd></div>`).join('');
+  // 3. características: todas las cifras en una franja
+  $('pp-datos').innerHTML = p.datos.map(([t, v]) => `<div><dt>${t}</dt><dd>${v}</dd></div>`).join('');
 
   // galería: de a pares, la foto vertical angosta y la horizontal ancha; los pares se alternan
   const anchos = [];
@@ -65,11 +60,12 @@
   $('pp-desc').innerHTML = p.desc.map((t) => `<p>${t}</p>`).join('');
 
   // 5. información adicional
-  const ficha = [['Operación', estado], ['Tipo', tipo], ['Ubicación', p.lugar], ...resto];
+  const ficha = [['Operación', estado], ['Tipo', tipo], ['Ubicación', p.lugar]];
   $('pp-ficha').innerHTML = ficha.map(([t, v]) => `<div><dt>${t}</dt><dd>${v}</dd></div>`).join('');
   $('pp-carac').innerHTML = p.carac.map((c) => `<li>${c}</li>`).join('');
 
   // otras propiedades
+  const dato = (q, t) => q.datos.find(([n]) => n === t)?.[1] ?? '';
   $('pp-otras').innerHTML = ORDEN.filter((k) => k !== clave).map((k) => {
     const q = FICHAS[k];
     const [e, t] = q.op.split(' · ');
@@ -78,7 +74,7 @@
       <p class="pp-otra-op"><span>${e}</span> ${t}</p>
       <h3 class="pp-otra-nom"><a href="propiedad.html?p=${k}">${q.nom}</a></h3>
       <p class="pp-otra-lugar">${q.lugar}</p>
-      <p class="pp-otra-precio">${q.precio}</p>
+      <p class="pp-otra-linea">${dato(q, 'Superficie')} <span aria-hidden="true">·</span> ${dato(q, 'Ambientes')} amb. <span aria-hidden="true">·</span> ${dato(q, 'Dormitorios')} dorm.</p>
     </article>`;
   }).join('');
   $('pp-otras').querySelectorAll('.pp-otra').forEach((art) => art.addEventListener('click', (e) => {
