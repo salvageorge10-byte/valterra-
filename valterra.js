@@ -39,11 +39,14 @@ if (busca) {
   });
 }
 
-// ── Tarjetas de propiedades: toda la tarjeta lleva a la página de la propiedad ──
-document.querySelectorAll('.prop:not(.prop-a)').forEach((card) => card.addEventListener('click', (e) => {
-  if (e.target.closest('a, button')) return;
-  location.href = card.querySelector('.ficha-ver').href;
-}));
+// ── Propiedades: toda la pieza lleva a la página de la propiedad ──
+document.querySelectorAll('.pieza').forEach((pieza) => {
+  pieza.style.cursor = 'pointer';
+  pieza.addEventListener('click', (e) => {
+    if (e.target.closest('a, button') || getSelection().toString()) return;
+    location.href = pieza.querySelector('a[href]').href;
+  });
+});
 
 // ── Movimiento ──
 const reducido = matchMedia('(prefers-reduced-motion: reduce)').matches;

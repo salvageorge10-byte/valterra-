@@ -88,94 +88,101 @@
       <h2 class="props-tit" id="props-tit" data-txt>Casas, pisos y departamentos, con lo esencial a&nbsp;la&nbsp;vista.</h2>
     </div>
 
-    <div class="props-grid">
-      <article class="prop prop-a">
-        <a class="prop-foto" href="propiedad.html?p=recoleta" data-clip>
-          <img src="img/prop-recoleta-piso.webp" width="1600" height="1200" loading="lazy" alt="Edificio de estilo francés con balcones de hierro en Recoleta">
-          <span class="prop-n">5 fotos</span>
+    <!-- cada propiedad es una pieza propia: foto grande, y al lado o debajo nombre, lugar, precio y datos -->
+    <div class="listado">
+
+      <article class="pieza pz-izq">
+        <a class="pieza-foto" href="propiedad.html?p=recoleta" tabindex="-1" aria-hidden="true" data-clip>
+          <img src="img/prop-recoleta-piso.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Edificio de estilo francés con balcones de hierro en Recoleta">
         </a>
-        <div class="ficha" data-txt>
-          <p class="ficha-op">Venta · Departamento</p>
-          <h3 class="ficha-nom">Piso de época en Recoleta</h3>
-          <p class="ficha-lugar">Recoleta, CABA</p>
-          <dl class="ficha-datos">
-            <div><dt>Superficie</dt><dd>210 m<span class="m2">2</span></dd></div>
-            <div><dt>Ambientes</dt><dd>5</dd></div>
-            <div><dt>Dormitorios</dt><dd>3</dd></div>
+        <div class="pieza-txt" data-txt>
+          <p class="pieza-op"><span class="pieza-estado">Venta</span>Departamento</p>
+          <h3 class="pieza-nom"><a href="propiedad.html?p=recoleta">Piso de época en Recoleta</a></h3>
+          <p class="pieza-lugar">Recoleta, CABA</p>
+          <p class="pieza-precio"><span class="mon">USD</span> 595.000</p>
+          <dl class="pieza-datos">
+          <div><dt>Superficie</dt><dd>210 m<span class="m2">2</span></dd></div>
+          <div><dt>Ambientes</dt><dd>5</dd></div>
+          <div><dt>Dormitorios</dt><dd>3</dd></div>
+          <div><dt>Baños</dt><dd>2 y toilette</dd></div>
           </dl>
-          <div class="ficha-pie">
-            <p class="ficha-precio"><span class="mon">USD</span> 595.000</p>
-            <div class="ficha-acc"><a class="ficha-ver ficha-ver-boton" href="propiedad.html?p=recoleta">Ver ficha y fotos</a>
-            <a class="ficha-cta" href="https://wa.me/5491140676706?text=Hola%20Valterra%2C%20me%20interesa%20el%20piso%20de%20%C3%A9poca%20en%20Recoleta." target="_blank" rel="noopener">Consultar</a></div>
-          </div>
+          <a class="pieza-ver" href="propiedad.html?p=recoleta">Ver la propiedad <span>5 fotos</span></a>
         </div>
       </article>
 
-      <article class="prop prop-b">
-        <a class="prop-foto" href="propiedad.html?p=belgranor-casa" data-clip>
-          <img src="img/prop-belgrano-r-casa.webp" width="1555" height="1944" loading="lazy" alt="Casa de estilo pintoresco con balcón de madera en Belgrano R">
-          <span class="prop-n">5 fotos</span>
+      <article class="pieza pz-der pz-vertical">
+        <a class="pieza-foto" href="propiedad.html?p=belgranor-casa" tabindex="-1" aria-hidden="true" data-clip>
+          <img src="img/prop-belgrano-r-casa.webp" width="1555" height="1944" loading="lazy" decoding="async" alt="Casa de estilo pintoresco con balcón de madera en Belgrano R">
         </a>
-        <div class="ficha" data-txt>
-          <p class="ficha-op">Venta · Casa con jardín</p>
-          <h3 class="ficha-nom">Casa en Belgrano R</h3>
-          <p class="ficha-lugar">Belgrano R, CABA</p>
-          <p class="ficha-linea">380 m<span class="m2">2</span> <span aria-hidden="true">·</span> 7 amb. <span aria-hidden="true">·</span> 4 dorm.</p>
-          <div class="ficha-pie">
-            <p class="ficha-precio"><span class="mon">USD</span> 1.050.000</p>
-            <a class="ficha-ver" href="propiedad.html?p=belgranor-casa">Ver ficha</a>
-          </div>
+        <div class="pieza-txt" data-txt>
+          <p class="pieza-op"><span class="pieza-estado">Venta</span>Casa con jardín</p>
+          <h3 class="pieza-nom"><a href="propiedad.html?p=belgranor-casa">Casa en Belgrano&nbsp;R</a></h3>
+          <p class="pieza-lugar">Belgrano R, CABA</p>
+          <p class="pieza-precio"><span class="mon">USD</span> 1.050.000</p>
+          <dl class="pieza-datos">
+          <div><dt>Superficie</dt><dd>380 m<span class="m2">2</span></dd></div>
+          <div><dt>Ambientes</dt><dd>7</dd></div>
+          <div><dt>Dormitorios</dt><dd>4</dd></div>
+          <div><dt>Baños</dt><dd>3</dd></div>
+          </dl>
+          <a class="pieza-ver" href="propiedad.html?p=belgranor-casa">Ver la propiedad <span>5 fotos</span></a>
         </div>
       </article>
 
-      <article class="prop prop-d">
-        <a class="prop-foto" href="propiedad.html?p=nordelta" data-clip>
-          <img src="img/prop-nordelta-depto.webp" width="1600" height="1066" loading="lazy" alt="Edificios bajos con pileta y parque en Nordelta">
-          <span class="prop-n">5 fotos</span>
+      <article class="pieza pz-izq pz-corrida">
+        <a class="pieza-foto" href="propiedad.html?p=nordelta" tabindex="-1" aria-hidden="true" data-clip>
+          <img src="img/prop-nordelta-depto.webp" width="1600" height="1066" loading="lazy" decoding="async" alt="Edificios bajos con pileta y parque en Nordelta">
         </a>
-        <div class="ficha" data-txt>
-          <p class="ficha-op">Alquiler · Departamento con pileta</p>
-          <h3 class="ficha-nom">Departamento con amenities en Nordelta</h3>
-          <p class="ficha-lugar">Nordelta, Tigre</p>
-          <p class="ficha-linea">118 m<span class="m2">2</span> <span aria-hidden="true">·</span> 3 amb. <span aria-hidden="true">·</span> 2 dorm.</p>
-          <div class="ficha-pie">
-            <p class="ficha-precio"><span class="mon">USD</span> 1.300 <small>por mes</small></p>
-            <a class="ficha-ver" href="propiedad.html?p=nordelta">Ver ficha</a>
-          </div>
+        <div class="pieza-txt" data-txt>
+          <p class="pieza-op"><span class="pieza-estado">Alquiler</span>Departamento con pileta</p>
+          <h3 class="pieza-nom"><a href="propiedad.html?p=nordelta">Departamento con amenities en Nordelta</a></h3>
+          <p class="pieza-lugar">Nordelta, Tigre</p>
+          <p class="pieza-precio"><span class="mon">USD</span> 1.300 <small>por mes</small></p>
+          <dl class="pieza-datos">
+          <div><dt>Superficie</dt><dd>118 m<span class="m2">2</span></dd></div>
+          <div><dt>Ambientes</dt><dd>3</dd></div>
+          <div><dt>Dormitorios</dt><dd>2</dd></div>
+          <div><dt>Baños</dt><dd>2</dd></div>
+          </dl>
+          <a class="pieza-ver" href="propiedad.html?p=nordelta">Ver la propiedad <span>5 fotos</span></a>
         </div>
       </article>
 
-      <article class="prop prop-e">
-        <a class="prop-foto" href="propiedad.html?p=belgranor-villa" data-clip>
-          <img src="img/prop-belgrano-r-villa.webp" width="1400" height="819" loading="lazy" alt="Casona blanca con torre y portón de madera en Belgrano R">
-          <span class="prop-n">5 fotos</span>
+      <article class="pieza pz-ancha">
+        <a class="pieza-foto" href="propiedad.html?p=belgranor-villa" tabindex="-1" aria-hidden="true" data-clip>
+          <img src="img/prop-belgrano-r-villa.webp" width="1400" height="819" loading="lazy" decoding="async" alt="Casona blanca con torre y portón de madera en Belgrano R">
         </a>
-        <div class="ficha" data-txt>
-          <p class="ficha-op">Venta · Casa con patio</p>
-          <h3 class="ficha-nom">Casona con torre en Belgrano R</h3>
-          <p class="ficha-lugar">Belgrano R, CABA</p>
-          <p class="ficha-linea">320 m<span class="m2">2</span> <span aria-hidden="true">·</span> 6 amb. <span aria-hidden="true">·</span> 4 dorm.</p>
-          <div class="ficha-pie">
-            <p class="ficha-precio"><span class="mon">USD</span> 885.000</p>
-            <a class="ficha-ver" href="propiedad.html?p=belgranor-villa">Ver ficha</a>
-          </div>
+        <div class="pieza-txt" data-txt>
+          <p class="pieza-op"><span class="pieza-estado">Venta</span>Casa con patio</p>
+          <h3 class="pieza-nom"><a href="propiedad.html?p=belgranor-villa">Casona con torre en Belgrano&nbsp;R</a></h3>
+          <p class="pieza-lugar">Belgrano R, CABA</p>
+          <p class="pieza-precio"><span class="mon">USD</span> 885.000</p>
+          <dl class="pieza-datos">
+          <div><dt>Superficie</dt><dd>320 m<span class="m2">2</span></dd></div>
+          <div><dt>Ambientes</dt><dd>6</dd></div>
+          <div><dt>Dormitorios</dt><dd>4</dd></div>
+          <div><dt>Baños</dt><dd>3</dd></div>
+          </dl>
+          <a class="pieza-ver" href="propiedad.html?p=belgranor-villa">Ver la propiedad <span>5 fotos</span></a>
         </div>
       </article>
 
-      <article class="prop prop-c">
-        <a class="prop-foto" href="propiedad.html?p=barrionorte" data-clip>
-          <img src="img/prop-barrio-norte-piso.webp" width="1200" height="1600" loading="lazy" alt="Fachada de piedra con balcones curvos y mansarda sobre la calle Callao">
-          <span class="prop-n">5 fotos</span>
+      <article class="pieza pz-izq pz-vertical">
+        <a class="pieza-foto" href="propiedad.html?p=barrionorte" tabindex="-1" aria-hidden="true" data-clip>
+          <img src="img/prop-barrio-norte-piso.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Fachada de piedra con balcones curvos y mansarda sobre la calle Callao">
         </a>
-        <div class="ficha" data-txt>
-          <p class="ficha-op">Venta · Departamento</p>
-          <h3 class="ficha-nom">Piso en Barrio Norte</h3>
-          <p class="ficha-lugar">Barrio Norte, CABA</p>
-          <p class="ficha-linea">160 m<span class="m2">2</span> <span aria-hidden="true">·</span> 4 amb. <span aria-hidden="true">·</span> 3 dorm.</p>
-          <div class="ficha-pie">
-            <p class="ficha-precio"><span class="mon">USD</span> 455.000</p>
-            <a class="ficha-ver" href="propiedad.html?p=barrionorte">Ver ficha</a>
-          </div>
+        <div class="pieza-txt" data-txt>
+          <p class="pieza-op"><span class="pieza-estado">Venta</span>Departamento</p>
+          <h3 class="pieza-nom"><a href="propiedad.html?p=barrionorte">Piso en Barrio&nbsp;Norte</a></h3>
+          <p class="pieza-lugar">Barrio Norte, CABA</p>
+          <p class="pieza-precio"><span class="mon">USD</span> 455.000</p>
+          <dl class="pieza-datos">
+          <div><dt>Superficie</dt><dd>160 m<span class="m2">2</span></dd></div>
+          <div><dt>Ambientes</dt><dd>4</dd></div>
+          <div><dt>Dormitorios</dt><dd>3</dd></div>
+          <div><dt>Baños</dt><dd>2</dd></div>
+          </dl>
+          <a class="pieza-ver" href="propiedad.html?p=barrionorte">Ver la propiedad <span>5 fotos</span></a>
         </div>
       </article>
 

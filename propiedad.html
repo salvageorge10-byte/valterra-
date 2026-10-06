@@ -68,65 +68,107 @@
     <span id="pp-miga">Ficha</span>
   </nav>
 
-  <!-- título y precio -->
-  <header class="pp-cab">
-    <div class="pp-titulo">
-      <p class="pp-op" id="pp-op"></p>
-      <h1 class="pp-nom" id="pp-nom">Propiedad</h1>
-      <p class="pp-lugar" id="pp-lugar"></p>
+  <!-- 1 y 2. foto principal muy grande, identificación y precio -->
+  <section class="pp-portada" aria-labelledby="pp-nom">
+    <figure class="pp-principal">
+      <button class="pp-principal-foto" type="button" id="pp-principal" data-i="0" aria-label="Ampliar la foto principal">
+        <img id="pp-principal-img" alt="" fetchpriority="high" decoding="async">
+      </button>
+      <figcaption class="pp-principal-pie">
+        <span id="pp-principal-cap"></span>
+        <button class="pp-ver-fotos" type="button" id="pp-ver-fotos" data-i="0">Ver las <span id="pp-total"></span> fotos</button>
+      </figcaption>
+    </figure>
+
+    <div class="pp-ident">
+      <div class="pp-titulo">
+        <p class="pp-op"><span class="pp-estado" id="pp-estado"></span><span id="pp-tipo"></span></p>
+        <h1 class="pp-nom" id="pp-nom">Propiedad</h1>
+        <p class="pp-lugar" id="pp-lugar"></p>
+      </div>
+      <div class="pp-valor">
+        <p class="pp-valor-et" id="pp-valor-et">Precio</p>
+        <p class="pp-precio" id="pp-precio"></p>
+        <a class="pp-boton" id="pp-wa" href="https://wa.me/5491140676706" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+      </div>
     </div>
-    <div class="pp-valor">
-      <p class="pp-precio" id="pp-precio"></p>
-      <a class="pp-boton" id="pp-wa" href="https://wa.me/5491140676706" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+  </section>
+
+  <!-- 3. características principales -->
+  <section class="pp-bloque" aria-labelledby="pp-carac-tit">
+    <h2 class="pp-et" id="pp-carac-tit">Características</h2>
+    <dl class="pp-datos" id="pp-datos"></dl>
+  </section>
+
+  <!-- galería: el resto de las fotos, grandes y rotuladas; abren el visor -->
+  <section class="pp-bloque pp-bloque-galeria" id="fotos" aria-labelledby="pp-gal-tit">
+    <div class="pp-et-fila">
+      <h2 class="pp-et" id="pp-gal-tit">Fotos</h2>
+      <p class="pp-et-nota">Los interiores son fotos de referencia</p>
     </div>
-  </header>
+    <div class="pp-galeria" id="pp-galeria"></div>
+  </section>
 
-  <!-- mosaico: foto principal + cuatro chicas; en celular es un carrusel -->
-  <div class="pp-mosaico" id="pp-mosaico"></div>
-  <p class="pp-mosaico-pie"><span id="pp-cuenta"></span> <a href="#fotos">Ver todas las fotos</a></p>
+  <!-- 4. descripción -->
+  <section class="pp-bloque" aria-labelledby="pp-desc-tit">
+    <h2 class="pp-et" id="pp-desc-tit">Descripción</h2>
+    <div class="pp-desc" id="pp-desc"></div>
+  </section>
 
-  <!-- datos, descripción y contacto -->
-  <div class="pp-cuerpo">
-    <div class="pp-detalle">
-      <dl class="pp-datos" id="pp-datos"></dl>
-
-      <h2 class="pp-sub">La propiedad</h2>
-      <p class="pp-desc" id="pp-desc"></p>
-
-      <h2 class="pp-sub">Características</h2>
-      <ul class="pp-carac" id="pp-carac"></ul>
+  <!-- 5. información adicional -->
+  <section class="pp-bloque" aria-labelledby="pp-info-tit">
+    <h2 class="pp-et" id="pp-info-tit">Información adicional</h2>
+    <div class="pp-info">
+      <dl class="pp-ficha" id="pp-ficha"></dl>
+      <div class="pp-detalles">
+        <h3 class="pp-detalles-tit">Detalles</h3>
+        <ul class="pp-carac" id="pp-carac"></ul>
+      </div>
     </div>
-
-    <aside class="pp-contacto" aria-labelledby="pp-contacto-tit">
-      <h2 class="pp-contacto-tit" id="pp-contacto-tit">¿Te interesa esta propiedad?</h2>
-      <p>Escribinos y te respondemos con más información, planos y disponibilidad para visitarla.</p>
-      <a class="pp-boton pp-boton-oro" id="pp-wa2" href="https://wa.me/5491140676706" target="_blank" rel="noopener">Consultar por WhatsApp</a>
-      <a class="enlace enlace-oro" id="pp-visita" href="https://wa.me/5491140676706" target="_blank" rel="noopener">Coordinar una visita</a>
-      <p class="pp-contacto-tel">WhatsApp <a href="https://wa.me/5491140676706" target="_blank" rel="noopener">11 4067-6706</a></p>
-    </aside>
-  </div>
-
-  <!-- todas las fotos, grandes y rotuladas -->
-  <section class="pp-fotos" id="fotos" aria-labelledby="fotos-tit">
-    <div class="folio">
-      <h2 class="folio-tit" id="fotos-tit">Fotos</h2>
-      <p class="folio-nota">Los interiores son fotos de referencia</p>
-    </div>
-    <div class="pp-fotos-lista" id="pp-fotos"></div>
   </section>
 
   <p class="pp-nota">Ficha de muestra. La fachada es del barrio y los interiores son fotos de referencia de otros inmuebles, no de esta propiedad. Precio calculado con el valor de mercado del metro cuadrado de la zona, octubre de 2026.</p>
 
-  <!-- otras propiedades -->
-  <section class="pp-otras" aria-labelledby="otras-tit">
-    <div class="folio">
-      <h2 class="folio-tit" id="otras-tit">Otras propiedades</h2>
-      <a class="folio-nota" href="index.html#propiedades">Volver al listado</a>
-    </div>
-    <div class="pp-otras-lista" id="pp-otras"></div>
-  </section>
-
 </main>
+
+<!-- 6. contacto: banda azul a todo el ancho -->
+<section class="pp-contacto" aria-labelledby="pp-contacto-tit">
+  <div class="pp-contacto-in">
+    <div>
+      <p class="pp-contacto-et">Contacto</p>
+      <h2 class="pp-contacto-tit" id="pp-contacto-tit">¿Te interesa <span id="pp-contacto-nom">esta propiedad</span>?</h2>
+      <p class="pp-contacto-txt">Escribinos y te respondemos con más información, planos y disponibilidad para visitarla.</p>
+    </div>
+    <div class="pp-contacto-acc">
+      <a class="pp-boton pp-boton-oro" id="pp-wa2" href="https://wa.me/5491140676706" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+      <a class="enlace enlace-oro" id="pp-visita" href="https://wa.me/5491140676706" target="_blank" rel="noopener">Coordinar una visita</a>
+      <p class="pp-contacto-tel">WhatsApp <a href="https://wa.me/5491140676706" target="_blank" rel="noopener">11 4067-6706</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- otras propiedades -->
+<section class="pp-otras" aria-labelledby="otras-tit">
+  <div class="pp-et-fila">
+    <h2 class="pp-et" id="otras-tit">Otras propiedades</h2>
+    <a class="pp-et-nota pp-volver" href="index.html#propiedades">Volver al listado</a>
+  </div>
+  <div class="pp-otras-lista" id="pp-otras"></div>
+</section>
+
+<!-- visor de fotos -->
+<dialog class="lb" id="lb" aria-label="Fotos de la propiedad">
+  <div class="lb-cab">
+    <p class="lb-n" id="lb-n" aria-live="polite"></p>
+    <button class="lb-cerrar" type="button" id="lb-cerrar">Cerrar <span aria-hidden="true">✕</span></button>
+  </div>
+  <figure class="lb-fig">
+    <img id="lb-img" alt="">
+    <figcaption class="lb-cap" id="lb-cap"></figcaption>
+  </figure>
+  <button class="lb-flecha lb-ant" type="button" id="lb-ant" aria-label="Foto anterior"><svg viewBox="0 0 32 16" aria-hidden="true"><path d="M31 8H2M9 1 2 8l7 7"/></svg></button>
+  <button class="lb-flecha lb-sig" type="button" id="lb-sig" aria-label="Foto siguiente"><svg viewBox="0 0 32 16" aria-hidden="true"><path d="M1 8h29M23 1l7 7-7 7"/></svg></button>
+</dialog>
 
 <footer class="pie">
   <div class="pie-marca">
